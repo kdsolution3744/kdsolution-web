@@ -7,7 +7,13 @@ export default function MainSection() {
         <strong>신뢰를 넘어, 미래로</strong>
         <strong>KD SOLUTION</strong>
       </h1>
-      <Image src={"/main-1.jpg"} className=" brightness-60" fill alt="main01" />
+      <Image
+        src={"/main-1.jpg"}
+        className=" brightness-60"
+        objectFit="cover"
+        fill
+        alt="main01"
+      />
     </div>
   );
 }
