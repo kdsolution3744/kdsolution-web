@@ -34,7 +34,7 @@ export const MENU_ITEM: IMenuList[] = [
       { title: "공정 설비", href: "/facilities/process" },
       { title: "측정 설비", href: "/facilities/measurement" },
       { title: "기타 설비", href: "/facilities/etc" },
-      { title: "인증서", href: "/facilities/certificates" },
+      { title: "공정", href: "/facilities/process" },
     ],
   },
   {
