@@ -7,17 +7,18 @@ export default function LinkSection() {
   const process = MENU_ITEM[2].subItems[3];
 
   return (
-    <div className="w-full flex flex-col space-y-8 py-12">
+    <div className="w-full h-[100vh] flex flex-col space-y-8 py-12">
       {/* Development Section */}
-      <div className="w-full space-y-2 text-center">
-        <h1 className="text-2xl">
-          <strong>소재 & 가공</strong>
+      <div className="w-full space-y-24 text-left p-16">
+        <h1 className="text-4xl flex flex-col gap-6">
+          <strong>{"KD Solution's"}</strong>
+          <strong>{"Materials & Processing"}</strong>
         </h1>
-        <h2>
+        <h2 className="text-5xl text-right">
           <strong>업계를 선도하는 소재와 가공 기술력을 확인해보세요.</strong>
         </h2>
       </div>
-      <div className="flex flex-row w-full">
+      <div className="flex flex-row w-full h-full">
         <Link
           href={ingridient.href}
           className="relative flex-1 group overflow-hidden transition-all duration-500 ease-in-out hover:flex-[1.3]"
@@ -30,7 +31,7 @@ export default function LinkSection() {
           />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-16">
             <div className="transform transition-all duration-500 group-hover:scale-110">
-              <Dribbble className="w-16 h-16 mb-4 mx-auto" />
+              <Dribbble className="w-16 h-16 mb-4 mx-auto group-hover:rotate-90 transition-all duration-500" />
               <h2 className="text-3xl md:text-4xl font-bold text-center">
                 소재
               </h2>
@@ -55,7 +56,7 @@ export default function LinkSection() {
           />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-8">
             <div className="transform transition-all duration-500 group-hover:scale-110">
-              <Cog className="w-16 h-16 mb-4 mx-auto" />
+              <Cog className="w-16 h-16 mb-4 mx-auto group-hover:rotate-180 transition-all duration-500" />
               <h2 className="text-3xl md:text-4xl font-bold text-center">
                 가공
               </h2>
