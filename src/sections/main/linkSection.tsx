@@ -1,24 +1,61 @@
+"use client";
 import { MENU_ITEM } from "@/constants/menu";
 import { Cog, Dribbble } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function LinkSection() {
   const ingridient = MENU_ITEM[1].subItems[0];
   const process = MENU_ITEM[2].subItems[3];
 
+  // 애니메이션 상태 관리
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+    return () => {
+      if (headerRef.current) observer.unobserve(headerRef.current);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-[100vh] flex flex-col space-y-8 py-12">
-      {/* Development Section */}
-      <div className="w-full space-y-24 text-left p-16">
-        <h1 className="text-4xl flex flex-col gap-6">
-          <strong>{"KD Solution's"}</strong>
+    <div className="w-full min-h-[100vh] flex flex-col space-y-8 py-12">
+      {/* Header */}
+      <div ref={headerRef} className="w-full space-y-24 text-left p-16">
+        <h1
+          className={`text-4xl flex flex-col gap-6 transition-all duration-700 ease-out
+            ${
+              visible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-16"
+            }`}
+        >
           <strong>{"Materials & Processing"}</strong>
         </h1>
-        <h2 className="text-5xl text-right">
-          <strong>업계를 선도하는 소재와 가공 기술력을 확인해보세요.</strong>
+        <h2
+          className={`text-5xl text-right flex flex-col gap-6 transition-all duration-700 ease-out
+            ${
+              visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
+            }`}
+        >
+          <strong className="keep-all">KD Solution의</strong>
+          <strong>업계를 선도하는</strong>
+          <strong>소재와 가공 기술력을 확인해보세요</strong>
         </h2>
       </div>
-      <div className="flex flex-row w-full h-full">
+      {/* Link Card */}
+      <div className="flex flex-row w-full h-[80vh]">
         <Link
           href={ingridient.href}
           className="relative flex-1 group overflow-hidden transition-all duration-500 ease-in-out hover:flex-[1.3]"
