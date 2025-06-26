@@ -15,7 +15,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 h-16 z-50 w-full  bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300 ease-in-out">
+    <header className="sticky top-0 h-16 z-50 w-full bg-white transition-all duration-300 ease-in-out">
       <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
@@ -28,8 +28,10 @@ export default function Navbar() {
         {/* 데스크톱 네비게이션 */}
         <ul className="hidden h-full sm:flex items-center group space-x-16 z-50">
           <div
-            className="w-full  fixed group-hover:h-52 top-[100%] left-0 translate-y-[-50px] group-hover:translate-y-0
-                    group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out rounded-b-lg z-10"
+            className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[60px] left-0 translate-y-[-20px] group-hover:translate-y-0 
+                    transition-all duration-300 ease-in-out rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
+                    bg-white
+                    "
           />
           {MENU_ITEM.map((item) => (
             <li key={item.title} className="relative group">
@@ -40,13 +42,16 @@ export default function Navbar() {
                 {item.title}
               </Link>
               <div
-                className="absolute top-[200%] opacity-0 translate-y-[-50px] pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-in-out py-4 text-sm z-50 min-w-[160px]"
+                className="absolute top-[200%] opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
+                          group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-in-out py-4 text-sm z-50 min-w-[160px]"
                 style={{ minWidth: "160px" }}
               >
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
                     <li key={v.title}>
-                      <Link href={v.href}>{v.title}</Link>
+                      <Link className="hover:text-blue-700" href={v.href}>
+                        {v.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
