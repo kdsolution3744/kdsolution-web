@@ -26,7 +26,7 @@ export default function Navbar() {
         </Link>
 
         {/* 데스크톱 네비게이션 */}
-        <ul className="hidden h-full sm:flex items-center group space-x-16 z-50">
+        <ul className="hidden h-full md:flex items-center group space-x-16 z-50">
           <div
             className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[60px] left-0 translate-y-[-20px] group-hover:translate-y-0 
                     transition-all duration-300 ease-in-out rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
@@ -43,8 +43,7 @@ export default function Navbar() {
               </Link>
               <div
                 className="absolute top-[200%] opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
-                          group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-in-out py-4 text-sm z-50 min-w-[160px]"
-                style={{ minWidth: "160px" }}
+                          group-hover:translate-y-0 break-keep group-hover:pointer-events-auto transition-all duration-300 ease-in-out py-4 text-sm z-50"
               >
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
@@ -63,12 +62,12 @@ export default function Navbar() {
         {/* 모바일 메뉴 */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="sm:hidden">
+            <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] p-8 sm:w-[400px]">
+          <SheetContent side="right" className="w-[300px] p-8 md:w-[400px]">
             <div className="flex flex-col h-full justify-between space-y-4 mt-4">
               <nav className="flex flex-col space-y-2">
                 {MENU_ITEM.map((item) => (
