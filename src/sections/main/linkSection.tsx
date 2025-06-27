@@ -11,20 +11,36 @@ export default function LinkSection() {
   // 애니메이션 상태 관리
   const headerRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
+    let lastDirection: "down" | "up" = "down";
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY.current) {
+        lastDirection = "down";
+      } else if (currentScrollY < prevScrollY.current) {
+        lastDirection = "up";
+      }
+      prevScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+
     const observer = new window.IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && lastDirection === "down") {
           setVisible(true);
+        } else if (!entry.isIntersecting && lastDirection === "up") {
+          setVisible(false);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.6 }
     );
     if (headerRef.current) {
       observer.observe(headerRef.current);
     }
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       if (headerRef.current) observer.unobserve(headerRef.current);
     };
   }, []);
