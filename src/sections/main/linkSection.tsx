@@ -60,7 +60,7 @@ export default function LinkSection() {
           <strong>{"Materials & Processing"}</strong>
         </h1>
         <h2
-          className={`text-5xl [&_strong]:break-keep text-right flex flex-col gap-6 transition-all duration-700 ease-out
+          className={`text-3xl md:text-5xl [&_strong]:break-keep overflow-hidden text-right flex flex-col gap-6 transition-all duration-700 ease-out
             ${
               visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
             }`}
