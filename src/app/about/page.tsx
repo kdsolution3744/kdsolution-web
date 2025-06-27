@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function AboutPage() {
-  return <div></div>;
+  redirect("/about/introduction");
 }
