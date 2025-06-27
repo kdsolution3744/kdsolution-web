@@ -27,14 +27,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 h-16 z-50  w-full hover:text-black hover:bg-white transition-colors duration-300 ease-in-out
+      className={`fixed top-0 h-16 z-50  w-full hover:text-black hover:bg-white
     ${scrolled ? "text-black bg-white" : "text-white bg-none"}`}
     >
       <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">L</span>
+            <span className="font-bold text-sm">L</span>
           </div>
           <span className="font-bold text-xl">Company</span>
         </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
         <ul className="hidden h-full md:flex items-center group space-x-16 z-50">
           <div
             className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[64px] left-0
-                    transition-all duration-300 ease-in-out rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
+                    rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
                     bg-white shadow
                     "
           />
