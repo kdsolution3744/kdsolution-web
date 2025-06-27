@@ -19,12 +19,16 @@ export default function MainSection() {
         <strong>신뢰를 넘어, 미래로</strong>
         <strong>KD SOLUTION</strong>
       </h1>
-      <div
-        className="w-full h-full absolute top-0 left-0 flex transition-transform duration-1000"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+      <div className="realative w-full h-full absolute top-0 left-0 flex transition-transform duration-1000">
         {imageList.map((src, idx) => (
-          <div key={src} className="relative w-full h-screen flex-shrink-0">
+          <div
+            key={src}
+            style={{
+              opacity: currentIndex === idx ? 100 : 0,
+              transitionDuration: "800",
+            }}
+            className="absolute transition-all duration-700 w-full h-screen flex-shrink-0"
+          >
             <Image
               src={src}
               className="brightness-60 object-cover"
