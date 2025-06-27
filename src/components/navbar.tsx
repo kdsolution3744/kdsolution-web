@@ -64,12 +64,12 @@ export default function Navbar() {
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
                     <li key={v.title} className="w-full">
-                      <Link
+                      <a
                         className="text-black w-full block hover:text-blue-700 font-semibold duration-200 text-center transition-all p-4"
                         href={v.href}
                       >
                         {v.title}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -97,14 +97,14 @@ export default function Navbar() {
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-1 pl-4">
                       {item.subItems.map((subItem) => (
-                        <Link
+                        <a
                           key={subItem.title}
                           href={subItem.href}
                           className="block rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.title}
-                        </Link>
+                        </a>
                       ))}
                     </CollapsibleContent>
                   </Collapsible>
