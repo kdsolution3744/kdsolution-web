@@ -34,7 +34,7 @@ export default function LinkSection() {
           setVisible(false);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.4 }
     );
     if (headerRef.current) {
       observer.observe(headerRef.current);
@@ -60,12 +60,12 @@ export default function LinkSection() {
           <strong>{"Materials & Processing"}</strong>
         </h1>
         <h2
-          className={`text-5xl text-right flex flex-col gap-6 transition-all duration-700 ease-out
+          className={`text-5xl [&_strong]:break-keep text-right flex flex-col gap-6 transition-all duration-700 ease-out
             ${
               visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
             }`}
         >
-          <strong className="keep-all">KD Solution의</strong>
+          <strong>KD Solution의</strong>
           <strong>업계를 선도하는</strong>
           <strong>소재와 가공 기술력을 확인해보세요</strong>
         </h2>
