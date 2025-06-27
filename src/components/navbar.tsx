@@ -40,15 +40,15 @@ export default function Navbar() {
         </Link>
 
         {/* 데스크톱 네비게이션 */}
-        <ul className="hidden h-full md:flex items-center group space-x-16 z-50">
+        <ul className="hidden flex-1 max-w-3/5 justify-around h-full md:flex items-center group z-50">
           <div
-            className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[64px] left-0
-                    rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
+            className="w-full absolute border-t opacity-0 group-hover:opacity-100 h-80 top-[64px] left-0
+                    rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto duration-0 group-hover:duration-300
                     bg-white shadow
                     "
           />
           {MENU_ITEM.map((item) => (
-            <li key={item.title} className="relative group">
+            <li key={item.title} className="relative text-center group w-full">
               <Link
                 href={item.href}
                 className="text-md transition-colors hover:text-blue-700 font-bold py-4"
@@ -56,13 +56,18 @@ export default function Navbar() {
                 {item.title}
               </Link>
               <div
-                className="absolute top-[200%] opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
-                          group-hover:translate-y-0 break-keep group-hover:pointer-events-auto transition-all duration-300 ease-in-out py-4 text-sm z-50"
+                className="w-full pt-4 h-70 border-r absolute top-[200%] 
+                          opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
+                          group-hover:translate-y-0 break-keep group-hover:pointer-events-auto 
+                          transition-all duration-0 group-hover:duration-300 ease-in-out py-4 text-sm z-50"
               >
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
-                    <li key={v.title}>
-                      <Link className="hover:text-blue-700" href={v.href}>
+                    <li key={v.title} className="w-full">
+                      <Link
+                        className="text-black w-full block hover:text-blue-700 font-semibold duration-200 text-center transition-all p-4"
+                        href={v.href}
+                      >
                         {v.title}
                       </Link>
                     </li>
