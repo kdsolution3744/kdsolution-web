@@ -2,7 +2,7 @@
 import { MENU_ITEM } from "@/constants/menu";
 import { ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   Collapsible,
@@ -13,9 +13,23 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 h-16 z-50 w-full bg-white transition-all duration-300 ease-in-out">
+    <header
+      className={`fixed top-0 h-16 z-50  w-full hover:text-black hover:bg-white transition-colors duration-300 ease-in-out
+    ${scrolled ? "text-black bg-white" : "text-white bg-none"}`}
+    >
       <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
@@ -28,16 +42,16 @@ export default function Navbar() {
         {/* 데스크톱 네비게이션 */}
         <ul className="hidden h-full md:flex items-center group space-x-16 z-50">
           <div
-            className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[60px] left-0 translate-y-[-20px] group-hover:translate-y-0 
+            className="w-full absolute opacity-0 group-hover:opacity-100 h-52 top-[64px] left-0
                     transition-all duration-300 ease-in-out rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto
-                    bg-white
+                    bg-white shadow
                     "
           />
           {MENU_ITEM.map((item) => (
             <li key={item.title} className="relative group">
               <Link
                 href={item.href}
-                className="text-md transition-colors hover:text-blue-700 font-bold text-black py-4"
+                className="text-md transition-colors hover:text-blue-700 font-bold py-4"
               >
                 {item.title}
               </Link>
