@@ -27,7 +27,7 @@ export default function SidebarLayout({
         />
       </div>
       {/* 탭 섹션 */}
-      <div className="min-h-[100vh] flex flex-row gap-8 bg-gray-50 px-10">
+      <div className="min-h-[100vh] mb-4 flex flex-row gap-8 bg-gray-50 md:px-10">
         {/* Sidebar */}
         <aside className="hidden md:flex w-56 min-h-[60vh] mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
           <nav className="w-full flex flex-col gap-2">
@@ -35,7 +35,7 @@ export default function SidebarLayout({
               <button
                 key={`side-tabs-${v.title}`}
                 onClick={() => setSelectedIdx(idx)}
-                className={`group w-full flex items-center gap-3 px-6 py-3 rounded-lg transition-all duration-200 font-semibold text-lg
+                className={`group w-full flex items-center gap-3 rounded-lg transition-all duration-200 font-semibold text-lg
                   ${
                     selectedIdx === idx
                       ? "bg-blue-100 text-blue-700 shadow-md"
@@ -43,16 +43,19 @@ export default function SidebarLayout({
                   }`}
                 style={{ outline: "none" }}
               >
-                {/* 인디케이터 */}
-                <span
-                  className={`inline-block w-2 h-2 rounded-full mr-2 transition-all duration-200
+                <Link
+                  href={v.href}
+                  className="flex items-center flex-1 px-6 py-3 text-left"
+                >
+                  {/* 인디케이터 */}
+                  <span
+                    className={`inline-block w-2 h-2 rounded-full mr-2 transition-all duration-200
                     ${
                       selectedIdx === idx
                         ? "bg-blue-500 scale-125"
                         : "bg-gray-300 group-hover:bg-blue-300"
                     }`}
-                />
-                <Link href={v.href} className="flex-1 text-left">
+                  />
                   {v.title}
                 </Link>
               </button>
@@ -60,7 +63,7 @@ export default function SidebarLayout({
           </nav>
         </aside>
         {/* Content */}
-        <main className="flex-1 bg-white rounded-xl shadow-lg p-10 ml-2 mt-[-3rem] min-h-[60vh]">
+        <main className="flex-1 bg-white rounded-xl shadow-lg p-10 mt-[-3rem] min-h-[60vh]">
           {children}
         </main>
       </div>
