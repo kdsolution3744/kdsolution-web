@@ -3,7 +3,8 @@
 import { IMenu } from "@/constants/menu";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function SidebarLayout({
   children,
@@ -14,7 +15,18 @@ export default function SidebarLayout({
   imgSrc: string;
   targetItem: IMenu[];
 }>) {
+  const pathname = usePathname();
   const [selectedIdx, setSelectedIdx] = useState(0);
+
+  useEffect(() => {
+    if (!pathname) return;
+    const currentLast = pathname.split("/").filter(Boolean).pop();
+    const foundIdx = targetItem.findIndex((v) => {
+      const hrefLast = v.href.split("/").filter(Boolean).pop();
+      return hrefLast === currentLast;
+    });
+    if (foundIdx !== -1) setSelectedIdx(foundIdx);
+  }, [pathname, targetItem]);
 
   return (
     <div className="w-full">
