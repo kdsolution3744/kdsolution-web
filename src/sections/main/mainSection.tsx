@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import main1 from "./img/main-1.png";
+import main2 from "./img/main-2.png";
 
 export default function MainSection() {
-  const imageList = ["/main-1.jpg", "/main-2.jpg"];
+  const imageList = [main1, main2];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export default function MainSection() {
       <div className="realative w-full h-full absolute top-0 left-0 flex transition-transform duration-1000">
         {imageList.map((src, idx) => (
           <div
-            key={src}
+            key={src.src}
             style={{
               opacity: currentIndex === idx ? 100 : 0,
               transitionDuration: "800",
@@ -34,7 +36,6 @@ export default function MainSection() {
               className="brightness-60 object-cover"
               fill
               placeholder="blur"
-              blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
               alt={`main0${idx + 1}`}
               priority={idx === 0}
             />

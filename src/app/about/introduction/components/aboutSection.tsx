@@ -1,5 +1,6 @@
 import AnimatedSection from "@/components/animatedSection";
 import Image from "next/image";
+import aboutImage from "./about.png";
 
 export default function AboutSection() {
   return (
@@ -9,12 +10,12 @@ export default function AboutSection() {
           <AnimatedSection>
             <div className="relative">
               <Image
-                src="/about.jpg"
+                src={aboutImage}
                 alt="회사 소개 이미지"
-                width={500}
+                width={0}
                 height={0}
                 placeholder="blur"
-                blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                sizes="100%"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
             </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { BLURIMG_URL } from "@/constants/blurImgUrl";
 import { IMenu } from "@/constants/menu";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,7 +36,7 @@ export default function SidebarLayout({
           src={imgSrc}
           fill
           placeholder="blur"
-          blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          blurDataURL={BLURIMG_URL}
           className="object-cover -z-10 brightness-70"
           alt="layout-img"
         />
