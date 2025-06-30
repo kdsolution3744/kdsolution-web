@@ -33,6 +33,8 @@ export default function MainSection() {
               src={src}
               className="brightness-60 object-cover"
               fill
+              placeholder="blur"
+              blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
               alt={`main0${idx + 1}`}
               priority={idx === 0}
             />

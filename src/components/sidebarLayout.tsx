@@ -34,6 +34,8 @@ export default function SidebarLayout({
         <Image
           src={imgSrc}
           fill
+          placeholder="blur"
+          blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
           className="object-cover -z-10 brightness-70"
           alt="layout-img"
         />
