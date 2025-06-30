@@ -1,4 +1,7 @@
-import { IHistory } from "@/types/history";
+export interface IHistory {
+  year: number;
+  desc: string[];
+}
 
 export const HISTORY_LIST: IHistory[] = [
   {

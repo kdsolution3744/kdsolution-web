@@ -1,5 +1,5 @@
 "use client";
-import { IHistory } from "@/types/history";
+import { IHistory } from "@/constants/history";
 import { useEffect, useRef, useState } from "react";
 
 interface prop {
