@@ -31,7 +31,7 @@ export const MENU_ITEM: IMenuList[] = [
     title: "설비 및 공정",
     href: "/facilities",
     subItems: [
-      { title: "공정 설비", href: "/facilities/process" },
+      { title: "공정 설비", href: "/facilities/machinery" },
       { title: "측정 설비", href: "/facilities/measurement" },
       { title: "기타 설비", href: "/facilities/etc" },
       { title: "공정", href: "/facilities/process" },
