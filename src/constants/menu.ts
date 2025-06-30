@@ -40,8 +40,8 @@ export const MENU_ITEM: IMenuList[] = [
     title: "문의",
     href: "/contact",
     subItems: [
-      { title: "오시는 길", href: "/about/location" },
-      { title: "고객 문의", href: "/about/inquiry" },
+      { title: "오시는 길", href: "/contact/location" },
+      { title: "고객 문의", href: "/contact/inquiry" },
     ],
   },
 ];
