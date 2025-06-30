@@ -39,9 +39,9 @@ export default function SidebarLayout({
         />
       </div>
       {/* 탭 섹션 */}
-      <div className="min-h-[100vh] mb-4 flex flex-row gap-8 bg-gray-50 md:px-10">
+      <div className="min-h-[100vh] mb-4 flex flex-row gap-8 bg-gray-50 lg:px-10">
         {/* Sidebar */}
-        <aside className="hidden md:flex w-56 min-h-[60vh] mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
+        <aside className="hidden lg:flex w-56 min-h-[60vh] mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
           <nav className="w-full flex flex-col gap-2">
             {targetItem.map((v, idx) => (
               <button
