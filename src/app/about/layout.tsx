@@ -6,7 +6,7 @@ export default function Layout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <SidebarLayout
-      imgSrc="/link-section-1.jpg"
+      imgSrc="/link-section-1.png"
       targetItem={MENU_ITEM[0].subItems}
     >
       {children}
