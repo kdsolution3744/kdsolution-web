@@ -31,7 +31,7 @@ export default function MapSection() {
       iframe: () => (
         <div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5301724558476!2d126.70976947608665!3d37.32995527210083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7143506ab1f1%3A0x453d355c449d6f4d!2z6rK96riw64-EIOyLnO2dpeyLnCDtnazrp53qs7Xsm5DroZwgNjggMjA5NCAxNA!5e0!3m2!1sko!2skr!4v1750933009247!5m2!1sko!2skr"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6345.051494932304!2d126.70940285417474!3d37.33007558173697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7143506ab1f1%3A0x6310acdb2eeb149b!2z6rK96riw64-EIOyLnO2dpeyLnCDtnazrp53qs7Xsm5DroZwgNjggMTQ!5e0!3m2!1sko!2skr!4v1751280248778!5m2!1sko!2skr"
             className="w-full h-[500px]"
             loading="lazy"
           ></iframe>
