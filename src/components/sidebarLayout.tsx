@@ -39,8 +39,34 @@ export default function SidebarLayout({
         />
       </div>
       {/* 탭 섹션 */}
-      <div className="min-h-[100vh] mb-4 flex flex-row gap-8 bg-gray-50 lg:px-10">
-        {/* Sidebar */}
+      <div className="min-h-[100vh] mb-4 flex flex-col lg:flex-row gap-4 lg:gap-8 bg-gray-50 lg:px-10">
+        {/* 모바일/태블릿: 상단 탭바 */}
+        <nav className="flex lg:hidden w-full overflow-x-auto justify-center bg-white/90 rounded-b-xl shadow-md px-2 py-2 gap-2 sticky top-0 z-20">
+          {targetItem.map((v, idx) => (
+            <Link
+              key={`mobile-side-tabs-${v.title}`}
+              href={v.href}
+              onClick={() => setSelectedIdx(idx)}
+              className={`flex items-center whitespace-nowrap px-4 py-2 rounded-lg font-semibold text-base transition-all duration-200
+                ${
+                  selectedIdx === idx
+                    ? "bg-blue-100 text-blue-700 shadow"
+                    : "hover:bg-gray-100 text-gray-700"
+                }`}
+            >
+              <span
+                className={`inline-block w-2 h-2 rounded-full mr-2 transition-all duration-200
+                  ${
+                    selectedIdx === idx
+                      ? "bg-blue-500 scale-125"
+                      : "bg-gray-300"
+                  }`}
+              />
+              {v.title}
+            </Link>
+          ))}
+        </nav>
+        {/* 데스크톱: 사이드바 */}
         <aside className="hidden lg:flex w-56 min-h-[60vh] mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
           <nav className="w-full flex flex-col gap-2">
             {targetItem.map((v, idx) => (
@@ -62,11 +88,11 @@ export default function SidebarLayout({
                   {/* 인디케이터 */}
                   <span
                     className={`inline-block w-2 h-2 rounded-full mr-2 transition-all duration-200
-                    ${
-                      selectedIdx === idx
-                        ? "bg-blue-500 scale-125"
-                        : "bg-gray-300 group-hover:bg-blue-300"
-                    }`}
+                      ${
+                        selectedIdx === idx
+                          ? "bg-blue-500 scale-125"
+                          : "bg-gray-300 group-hover:bg-blue-300"
+                      }`}
                   />
                   {v.title}
                 </Link>
@@ -75,7 +101,7 @@ export default function SidebarLayout({
           </nav>
         </aside>
         {/* Content */}
-        <main className="flex-1 bg-white rounded-xl shadow-lg p-10 mt-[-3rem] min-h-[60vh]">
+        <main className="flex-1 bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-10 mt-0 lg:mt-[-3rem] min-h-[60vh]">
           {children}
         </main>
       </div>
