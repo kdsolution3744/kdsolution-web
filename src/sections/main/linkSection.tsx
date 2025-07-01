@@ -71,7 +71,7 @@ export default function LinkSection() {
         </h2>
       </div>
       {/* Link Card */}
-      <div className="flex flex-row w-full h-[80vh]">
+      <div className="flex flex-col lg:flex-row w-full h-[80vh]">
         <Link
           href={ingridient.href}
           className="relative flex-1 group overflow-hidden transition-all duration-500 ease-in-out hover:flex-[1.3]"
