@@ -1,13 +1,14 @@
+import ContactSection from "@/sections/main/contactSection";
 import LinkSection from "@/sections/main/linkSection";
 import MainSection from "@/sections/main/mainSection";
-import MapSection from "@/sections/main/mapSection";
 
 export default function Home() {
   return (
     <div>
       <MainSection />
       <LinkSection />
-      <MapSection />
+      {/* <MapSection /> */}
+      <ContactSection />
     </div>
   );
 }

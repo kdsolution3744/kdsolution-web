@@ -46,7 +46,7 @@ export default function LinkSection() {
   }, []);
 
   return (
-    <div className="w-full min-h-[100vh] flex flex-col space-y-8 py-12">
+    <div className="w-full min-h-[100vh] flex flex-col space-y-8 pt-12">
       {/* Header */}
       <div ref={headerRef} className="w-full space-y-24 text-left p-16">
         <h1
