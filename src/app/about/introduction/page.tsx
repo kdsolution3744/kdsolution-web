@@ -1,5 +1,5 @@
-import AboutSection from "./components/aboutSection";
-import VisionSection from "./components/visionSection";
+import AboutSection from "./_components/aboutSection";
+import VisionSection from "./_components/visionSection";
 
 export default function IntroductionPage() {
   return (

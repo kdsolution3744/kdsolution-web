@@ -1,5 +1,5 @@
 import { HISTORY_LIST } from "@/constants/history";
-import HistoryItem from "./components/historyItem";
+import HistoryItem from "./_components/historyItem";
 
 export default function HistoryPage() {
   return (
