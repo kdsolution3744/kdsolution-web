@@ -49,12 +49,12 @@ export default function Navbar() {
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
                     <li key={v.title} className="w-full">
-                      <a
+                      <Link
                         className="text-black w-full block hover:text-blue-700 font-semibold duration-200 text-center transition-all p-4"
                         href={v.href}
                       >
                         {v.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
