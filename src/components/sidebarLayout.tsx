@@ -70,7 +70,7 @@ export default function SidebarLayout({
           ))}
         </nav>
         {/* 데스크톱: 사이드바 */}
-        <aside className="hidden lg:flex w-56 min-h-[60vh] mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
+        <aside className="hidden lg:flex w-56 min-h-[50vh] h-fit mt-[-3rem] rounded-xl shadow-xl bg-white/80 backdrop-blur-md flex-col items-center py-10 z-10 relative">
           <nav className="w-full flex flex-col gap-2">
             {targetItem.map((v, idx) => (
               <button
