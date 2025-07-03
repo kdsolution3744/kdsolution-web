@@ -56,7 +56,7 @@ export default function Navbar() {
                 {item.title}
               </Link>
               <div
-                className="w-full pt-4 h-70 border-r absolute top-[200%] 
+                className="w-full pt-4 h-70 absolute top-[200%] 
                           opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
                           group-hover:translate-y-0 break-keep group-hover:pointer-events-auto 
                           transition-all duration-0 group-hover:duration-300 ease-in-out py-4 text-sm z-50"
