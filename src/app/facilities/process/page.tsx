@@ -199,7 +199,7 @@ export default function ProcessPage() {
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {mainProcess.map((step, index) => (
+                {mainProcess.map((step) => (
                   <div key={step.id}>{renderProcessStep(step)}</div>
                 ))}
               </div>
