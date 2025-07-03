@@ -1,7 +1,7 @@
 "use client";
 
 import { ImgSource } from "@/constants/imgSource";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ImgModal({
   isOpen,
@@ -12,10 +12,17 @@ export default function ImgModal({
   onClose: () => void;
   imgSource: ImgSource | null;
 }) {
+  const [idx, setIdx] = useState(0);
+
+  const handleClose = () => {
+    setIdx(0);
+    onClose();
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
@@ -32,15 +39,15 @@ export default function ImgModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black bg-opacity-75 transition-opacity"
-        onClick={onClose}
+        className="absolute inset-0 brightness-20 backdrop-blur-sm transition-opacity"
+        onClick={handleClose}
       />
 
       {/* Modal Content */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden">
         {/* Close Button */}
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-4 right-4 z-10 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
         >
           <svg
@@ -58,51 +65,36 @@ export default function ImgModal({
           </svg>
         </button>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-          {/* Image Section */}
-          <div className="relative bg-gray-100 flex items-center justify-center p-8">
-            <img
-              src={imgSource.image || "/placeholder.svg"}
-              alt={imgSource.title}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Content Section */}
-          <div className="p-8 overflow-y-auto">
-            <div className="space-y-6">
-              {imgSource.category && (
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                  {imgSource.category}
-                </span>
-              )}
-
-              <h2 className="text-3xl font-bold text-gray-900">
-                {imgSource.title}
-              </h2>
-
-              <div className="prose prose-gray max-w-none">
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {imgSource.desc}
-                </p>
-              </div>
-
-              {imgSource.specs && imgSource.specs.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                    주요 사양
-                  </h3>
-                  <ul className="space-y-2">
-                    {imgSource.specs.map((spec, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-gray-700">{spec}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+        {/* Image Section */}
+        <div className="relative space-y-4 bg-gray-100 flex flex-col items-center justify-center p-8">
+          <img
+            src={imgSource.imageList[idx] || "/placeholder.svg"}
+            alt={imgSource.title}
+            className="object-contain rounded-lg shadow-lg"
+          />
+          {/* 썸네일 리스트 */}
+          <div className="flex justify-center gap-2 overflow-x-auto max-w-full">
+            {imgSource.imageList.map((thumb, tIdx) => (
+              <button
+                key={thumb + tIdx}
+                onClick={() => setIdx(tIdx)}
+                className={`border-2 rounded-md p-0.5 transition-all duration-200
+                    ${
+                      idx === tIdx
+                        ? "border-blue-500"
+                        : "border-transparent hover:border-gray-400"
+                    }`}
+                style={{ minWidth: 48, minHeight: 48 }}
+              >
+                <img
+                  src={thumb}
+                  alt={`subImg-${thumb}-${tIdx + 1}`}
+                  width={36}
+                  height={36}
+                  className="w-36 h-36 object-cover rounded"
+                />
+              </button>
+            ))}
           </div>
         </div>
       </div>

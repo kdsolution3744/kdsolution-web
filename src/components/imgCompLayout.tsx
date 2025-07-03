@@ -61,9 +61,11 @@ export default function ImgCompLayout({
         {/* Equipment Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {imgSourceList.map((v, index) => (
-            <AnimatedSection key={v.id} delay={index * 100}>
-              <ImageCard equipment={v} onClick={() => handleOpenModal(v)} />
-            </AnimatedSection>
+            <ImageCard
+              key={v.title + index}
+              equipment={v}
+              onClick={() => handleOpenModal(v)}
+            />
           ))}
         </div>
 
