@@ -16,7 +16,7 @@ export default function ImageCard({
         <img
           src={equipment.imageList[0] || "/placeholder.svg"}
           alt={equipment.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-70 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
           <div className="w-12 h-12 bg-white bg-opacity-90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
