@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contactInfo";
 export default function InquiryPage() {
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 px-4">
+      <div className=" bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <AnimatedSection>

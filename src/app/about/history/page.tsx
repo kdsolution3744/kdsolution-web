@@ -4,7 +4,7 @@ import HistoryItem from "./_components/historyItem";
 export default function HistoryPage() {
   return (
     <div>
-      <div className="min-h-screen py-16 px-4">
+      <div className=" py-16 px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20">

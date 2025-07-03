@@ -42,7 +42,7 @@ export default function SidebarLayout({
         />
       </div>
       {/* 탭 섹션 */}
-      <div className="min-h-[100vh] mb-4 flex flex-col lg:flex-row gap-4 lg:gap-8 bg-gray-50 lg:px-10">
+      <div className="h-fit mb-4 flex flex-col lg:flex-row gap-4 lg:gap-8 bg-gray-50 lg:px-10">
         {/* 모바일/태블릿: 상단 탭바 */}
         <nav className="flex lg:hidden w-full overflow-x-auto justify-center bg-white/90 rounded-b-xl shadow-md px-2 py-2 gap-2 sticky top-0 z-20">
           {targetItem.map((v, idx) => (
