@@ -66,6 +66,7 @@ const inspectionProcess: ProcessStep[] = [
 ];
 
 export default function ProcessPage() {
+  const [mode, setMode] = useState<"이미지" | "컴포넌트">("이미지");
   const [selectedDecision, setSelectedDecision] = useState<{
     [key: string]: "ok" | "ng" | null;
   }>({});
@@ -189,72 +190,84 @@ export default function ProcessPage() {
             각 단계를 클릭하여 프로세스 흐름을 확인하세요
           </p>
         </div>
+        <div className="flex flex-row gap-4 justify-center my-4">
+          <Button onClick={() => setMode("이미지")}>이미지</Button>
+          <Button onClick={() => setMode("컴포넌트")}>컴포넌트</Button>
+        </div>
 
-        <div className="grid xl:grid-cols-3 gap-8">
-          {/* Main Process */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">
-                메인 프로세스
-              </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
-                {mainProcess.map((step) => (
-                  <div key={step.id}>{renderProcessStep(step)}</div>
-                ))}
-              </div>
-            </div>
+        {mode === "이미지" ? (
+          <div>
+            <img src={"/flow.jpg"} />
           </div>
+        ) : (
+          <>
+            <div className="grid xl:grid-cols-3 gap-8">
+              {/* Main Process */}
+              <div className="lg:col-span-2">
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">
+                    메인 프로세스
+                  </h2>
 
-          {/* Inspection Process */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-200">
-              <h2 className="text-xl font-semibold mb-6 text-center text-blue-800">
-                검사 프로세스
-              </h2>
-
-              <div className="space-y-4">
-                {inspectionProcess.map((step) => (
-                  <div key={step.id} className="flex flex-col items-center">
-                    {renderProcessStep(step, true)}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+                    {mainProcess.map((step) => (
+                      <div key={step.id}>{renderProcessStep(step)}</div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
 
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-blue-800 mb-2">
-                  검사 프로세스 안내
-                </h3>
-                <ul className="text-sm text-blue-700 space-y-1">
-                  <li>• 출하검사에서 NG 시 진입</li>
-                  <li>• 이상 유/무 체크에서 NG 시 현상파악으로 순환</li>
-                  <li>• 이상 유/무 체크에서 OK 시 포장/출하로 이동</li>
-                </ul>
+              {/* Inspection Process */}
+              <div className="lg:col-span-1">
+                <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-200">
+                  <h2 className="text-xl font-semibold mb-6 text-center text-blue-800">
+                    검사 프로세스
+                  </h2>
+
+                  <div className="space-y-4">
+                    {inspectionProcess.map((step) => (
+                      <div key={step.id} className="flex flex-col items-center">
+                        {renderProcessStep(step, true)}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                    <h3 className="font-semibold text-blue-800 mb-2">
+                      검사 프로세스 안내
+                    </h3>
+                    <ul className="text-sm text-blue-700 space-y-1">
+                      <li>• 출하검사에서 NG 시 진입</li>
+                      <li>• 이상 유/무 체크에서 NG 시 현상파악으로 순환</li>
+                      <li>• 이상 유/무 체크에서 OK 시 포장/출하로 이동</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Legend */}
-        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-lg font-semibold mb-4">범례</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-white border border-gray-300 rounded"></div>
-              <span className="text-sm">일반 단계</span>
+            {/* Legend */}
+            <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+              <h3 className="text-lg font-semibold mb-4">범례</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-white border border-gray-300 rounded"></div>
+                  <span className="text-sm">일반 단계</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-yellow-50 border border-yellow-300 rounded"></div>
+                  <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                  <span className="text-sm">판단 단계 (OK/NG)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-blue-50 border border-blue-300 rounded"></div>
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span className="text-sm">검사 프로세스</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-yellow-50 border border-yellow-300 rounded"></div>
-              <AlertTriangle className="w-4 h-4 text-yellow-600" />
-              <span className="text-sm">판단 단계 (OK/NG)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-blue-50 border border-blue-300 rounded"></div>
-              <CheckCircle className="w-4 h-4 text-blue-600" />
-              <span className="text-sm">검사 프로세스</span>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </div>
   );
