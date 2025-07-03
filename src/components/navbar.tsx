@@ -1,8 +1,9 @@
 "use client";
 import { MENU_ITEM } from "@/constants/menu";
 import { ChevronDown, Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import {
   Collapsible,
@@ -13,30 +14,14 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header
-      className={`fixed top-0 h-16 z-50  w-full hover:text-black hover:bg-white
-    ${scrolled ? "text-black bg-white" : "text-white bg-none"}`}
-    >
+    <header className={`fixed top-0 h-16 z-50  w-full text-black bg-white`}>
       <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-            <span className="font-bold text-sm">L</span>
-          </div>
-          <span className="font-bold text-xl">Company</span>
+          <Image src={"/logo.jpg"} width={40} height={0} />
+          <span className="font-bold text-xl">KD Solution</span>
         </Link>
 
         {/* 데스크톱 네비게이션 */}
@@ -97,14 +82,14 @@ export default function Navbar() {
                     </CollapsibleTrigger>
                     <CollapsibleContent className="space-y-1 pl-4">
                       {item.subItems.map((subItem) => (
-                        <a
+                        <Link
                           key={subItem.title}
                           href={subItem.href}
                           className="block rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.title}
-                        </a>
+                        </Link>
                       ))}
                     </CollapsibleContent>
                   </Collapsible>
@@ -116,12 +101,8 @@ export default function Navbar() {
                   className="flex items-center space-x-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="h-6 w-6 rounded bg-primary flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-xs">
-                      L
-                    </span>
-                  </div>
-                  <span className="font-bold text-lg">Company</span>
+                  <img src={"/logo.jpg"} width={32} />
+                  {/* <span className="font-bold text-lg">KD Solution</span> */}
                 </Link>
               </div>
             </div>
