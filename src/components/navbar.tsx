@@ -3,7 +3,8 @@ import { MENU_ITEM } from "@/constants/menu";
 import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   Collapsible,
@@ -13,24 +14,37 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 export default function Navbar() {
+  const [isHover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setIsHover(false);
+  }, [pathName]);
 
   return (
     <header className={`fixed top-0 h-16 z-50  w-full text-black bg-white`}>
       <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={"/logo.jpg"} width={40} height={0} />
+          <Image src={"/logo.jpg"} width={40} height={0} alt="logo" />
           <span className="font-bold text-xl">KD Solution</span>
         </Link>
 
         {/* 데스크톱 네비게이션 */}
-        <ul className="hidden flex-1 max-w-3/5 justify-around h-full md:flex items-center group z-50">
+        <ul
+          onMouseEnter={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+          className="hidden flex-1 max-w-3/5 justify-around h-full md:flex items-center group z-50"
+        >
           <div
-            className="w-full absolute border-t opacity-0 group-hover:opacity-100 h-80 top-[64px] left-0
-                    rounded-b-lg z-10  pointer-events-none group-hover:pointer-events-auto duration-0 group-hover:duration-300
-                    bg-white shadow
-                    "
+            className={`w-full absolute border-t h-80 top-[64px] left-0
+                    rounded-b-lg z-10
+                    bg-white shadow ${
+                      isHover
+                        ? "opacity-100 duration-300 pointer-events-auto"
+                        : "opacity-0 pointer-events-none duration-0 "
+                    }`}
           />
           {MENU_ITEM.map((item) => (
             <li key={item.title} className="relative text-center group w-full">
@@ -41,10 +55,13 @@ export default function Navbar() {
                 {item.title}
               </Link>
               <div
-                className="w-full pt-4 h-70 absolute top-[200%] 
-                          opacity-0 group-hover:opacity-100 translate-y-[-20px] pointer-events-none
-                          group-hover:translate-y-0 break-keep group-hover:pointer-events-auto 
-                          transition-all duration-0 group-hover:duration-300 ease-in-out py-4 text-sm z-50"
+                className={`${
+                  isHover
+                    ? "opacity-100 translate-y-0 pointer-events-auto duration-300"
+                    : "opacity-0 translate-y-[-20px] pointer-events-none duration-0"
+                }
+                              w-full pt-4 h-70 absolute top-[200%] break-keep  
+                              transition-all ease-in-out py-4 text-sm z-50`}
               >
                 <ul className="space-y-4">
                   {item.subItems.map((v) => (
