@@ -1,9 +1,11 @@
 "use client";
 
+import flow from "@/assets/flow.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, ArrowRight, CheckCircle, XCircle } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 type ProcessStep = {
@@ -180,7 +182,7 @@ export default function ProcessPage() {
   };
 
   return (
-    <div className=" bg-gray-50 p-6">
+    <div className=" bg-gray-50 p-6 ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -196,8 +198,8 @@ export default function ProcessPage() {
         </div>
 
         {mode === "이미지" ? (
-          <div>
-            <img src={"/flow.jpg"} />
+          <div className="relative w-full h-[80vh]">
+            <Image src={flow} fill alt="flow" />
           </div>
         ) : (
           <>
