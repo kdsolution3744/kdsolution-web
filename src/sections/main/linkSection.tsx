@@ -79,7 +79,7 @@ export default function LinkSection() {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/link-section-1.png')`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/link-section-1.jpg')`,
             }}
           />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-16">
@@ -104,7 +104,7 @@ export default function LinkSection() {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/link-section-2.png')`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/link-section-2.jpg')`,
             }}
           />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-8">

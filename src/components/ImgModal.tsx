@@ -1,6 +1,7 @@
 "use client";
 
 import { ImgSource } from "@/constants/imgSource";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function ImgModal({
@@ -67,7 +68,7 @@ export default function ImgModal({
 
         {/* Image Section */}
         <div className="relative space-y-4 bg-gray-100 flex flex-col items-center justify-center p-8">
-          <img
+          <Image
             src={imgSource.imageList[idx] || "/placeholder.svg"}
             alt={imgSource.title}
             className="object-contain rounded-lg shadow-lg"
@@ -76,7 +77,7 @@ export default function ImgModal({
           <div className="flex justify-center gap-2 overflow-x-auto max-w-full">
             {imgSource.imageList.map((thumb, tIdx) => (
               <button
-                key={thumb + tIdx}
+                key={thumb.src + tIdx}
                 onClick={() => setIdx(tIdx)}
                 className={`border-2 rounded-md p-0.5 transition-all duration-200
                     ${
@@ -86,7 +87,7 @@ export default function ImgModal({
                     }`}
                 style={{ minWidth: 48, minHeight: 48 }}
               >
-                <img
+                <Image
                   src={thumb}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
                   width={36}

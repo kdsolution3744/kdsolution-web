@@ -1,6 +1,6 @@
+import aboutImage from "@/assets/about.jpg";
 import AnimatedSection from "@/components/animatedSection";
 import Image from "next/image";
-import aboutImage from "./about.png";
 
 export default function AboutSection() {
   return (

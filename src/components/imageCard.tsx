@@ -1,4 +1,5 @@
 import { ImgSource } from "@/constants/imgSource";
+import Image from "next/image";
 
 export default function ImageCard({
   equipment,
@@ -13,7 +14,7 @@ export default function ImageCard({
       onClick={onClick}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-        <img
+        <Image
           src={equipment.imageList[0] || "/placeholder.svg"}
           alt={equipment.title}
           className="w-full h-full object-cover group-hover:scale-105 group-hover:brightness-70 transition-transform duration-300"
