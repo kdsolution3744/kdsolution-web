@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ContactSection() {
   return (
-    <div className="w-full bg-gray-100 p-24 space-y-12 grid grid-cols-1 lg:grid-cols-2">
+    <div className="w-full bg-gray-100 p-24 space-y-12 grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div className="space-y-6">
         <h3 className="text-5xl">
           <strong>고객지원</strong>
