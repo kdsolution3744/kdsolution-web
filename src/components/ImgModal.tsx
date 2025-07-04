@@ -45,11 +45,15 @@ export default function ImgModal({
       />
 
       {/* Modal Content */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden">
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl min-w-[320px] min-h-[420px] max-h-[90vh] flex flex-col overflow-hidden">
+        {/* Title */}
+        <div className="w-full px-8 pt-6 pb-2 text-xl font-bold text-center border-b border-gray-200 bg-white z-10">
+          {imgSource.title}
+        </div>
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
+          className="absolute top-4 right-4 z-20 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
         >
           <svg
             className="w-6 h-6 text-gray-600"
@@ -67,11 +71,18 @@ export default function ImgModal({
         </button>
 
         {/* Image Section */}
-        <div className="relative space-y-4 bg-gray-100 flex flex-col items-center justify-center p-8">
+        <div className="relative flex-1 bg-gray-100 flex flex-col items-center justify-center p-8 space-y-4 min-h-[320px]">
           <Image
             src={imgSource.imageList[idx] || "/placeholder.svg"}
             alt={imgSource.title}
             className="object-contain rounded-lg shadow-lg"
+            width={0}
+            height={0}
+            style={{
+              width: "auto",
+              height: "400px",
+              maxWidth: "100%",
+            }}
           />
           {/* 썸네일 리스트 */}
           <div className="flex justify-center gap-2 overflow-x-auto max-w-full">
