@@ -90,8 +90,8 @@ export default function ImgModal({
                 <Image
                   src={thumb}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
-                  width={36}
-                  height={36}
+                  width={144}
+                  height={144}
                   className="w-36 h-36 object-cover rounded"
                 />
               </button>
