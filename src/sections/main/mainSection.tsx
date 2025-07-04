@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import main1 from "./img/main-1.png";
-import main2 from "./img/main-2.png";
 
 export default function MainSection() {
-  const imageList = [main1, main2];
+  const imageList = ["/main-1.jpg", "/main-2.jpg"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -24,7 +22,7 @@ export default function MainSection() {
       <div className="realative w-full h-full absolute top-0 left-0 flex transition-transform duration-1000">
         {imageList.map((src, idx) => (
           <div
-            key={src.src}
+            key={src}
             style={{
               opacity: currentIndex === idx ? 100 : 0,
               transitionDuration: "800",
