@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/products",
-        destination: "/products/main",
+        destination: "/products/material",
         permanent: true,
       },
       {

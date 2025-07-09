@@ -20,10 +20,8 @@ export const MENU_ITEM: IMenuList[] = [
     title: "제품소개",
     href: "/products",
     subItems: [
-      { title: "주력 제품", href: "/products/main" },
-      { title: "신제품", href: "/products/new" },
-      { title: "카탈로그", href: "/products/catalog" },
-      { title: "기술 자료", href: "/products/technical" },
+      { title: "소재", href: "/products/material" },
+      { title: "가공품", href: "/products/products" },
     ],
   },
   {
