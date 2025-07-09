@@ -77,12 +77,7 @@ export default function ImgModal({
             alt={imgSource.title}
             className="object-contain rounded-lg shadow-lg"
             width={0}
-            height={0}
-            style={{
-              width: "auto",
-              height: "400px",
-              maxWidth: "100%",
-            }}
+            height={400}
           />
           {/* 썸네일 리스트 */}
           <div className="flex justify-center gap-2 overflow-x-auto max-w-full">
@@ -90,7 +85,7 @@ export default function ImgModal({
               <button
                 key={thumb.src + tIdx}
                 onClick={() => setIdx(tIdx)}
-                className={`border-2 rounded-md p-0.5 transition-all duration-200
+                className={`relative border-2 w-32 h-32 rounded-md p-0.5 transition-all duration-200
                     ${
                       idx === tIdx
                         ? "border-blue-500"
@@ -101,9 +96,8 @@ export default function ImgModal({
                 <Image
                   src={thumb}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
-                  width={144}
-                  height={144}
-                  className="w-36 h-36 object-cover rounded"
+                  fill
+                  className=" object-cover rounded"
                 />
               </button>
             ))}
