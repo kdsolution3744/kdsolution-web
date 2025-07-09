@@ -53,7 +53,7 @@ export default function ImgModal({
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-20 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
+          className="absolute top-4 right-4 z-20 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 "
         >
           <svg
             className="w-6 h-6 text-gray-600"
@@ -71,33 +71,34 @@ export default function ImgModal({
         </button>
 
         {/* Image Section */}
-        <div className="relative flex-1 bg-gray-100 flex flex-col items-center justify-center p-8 space-y-4 min-h-[320px]">
-          <Image
-            src={imgSource.imageList[idx] || "/placeholder.svg"}
-            alt={imgSource.title}
-            className="object-contain rounded-lg shadow-lg"
-            width={0}
-            height={400}
-          />
+        <div className="flex-1 bg-gray-100 flex flex-col items-center justify-center p-8 space-y-4 min-h-[320px]">
+          <div className="relative min-w-[400px] w-full min-h-[400px] h-auto">
+            <Image
+              src={imgSource.imageList[idx] || "/placeholder.svg"}
+              alt={imgSource.title}
+              className="w-full h-auto object-contain rounded-lg "
+              fill
+            />
+          </div>
           {/* 썸네일 리스트 */}
           <div className="flex justify-center gap-2 overflow-x-auto max-w-full">
             {imgSource.imageList.map((thumb, tIdx) => (
               <button
                 key={thumb.src + tIdx}
                 onClick={() => setIdx(tIdx)}
-                className={`relative border-2 w-32 h-32 rounded-md p-0.5 transition-all duration-200
+                className={` border-2 rounded-md p-0.5 transition-all duration-200
                     ${
                       idx === tIdx
                         ? "border-blue-500"
                         : "border-transparent hover:border-gray-400"
                     }`}
-                style={{ minWidth: 48, minHeight: 48 }}
               >
                 <Image
                   src={thumb}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
-                  fill
-                  className=" object-cover rounded"
+                  width={144}
+                  height={144}
+                  className="w-32 h-32 object-cover rounded"
                 />
               </button>
             ))}
