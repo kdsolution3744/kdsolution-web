@@ -1,12 +1,12 @@
 import { MENU_ITEM } from "@/constants/menu";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Hash, Mail, MapPin, Phone, UserRound } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-border border-t">
       <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* 회사 정보 */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -22,16 +22,24 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                <UserRound className="h-4 w-4" />
+                <span>대표 : 이기복</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                <Hash className="h-4 w-4" />
+                <span>사업자 등록 번호 : 134-86-83481</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>서울특별시 강남구 테헤란로 123</span>
+                <span>주소 : 경기도 안산시 단원구 성곡로 176, 621호</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>02-1234-5678</span>
+                <span>TEL : 031-493-3744</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>info@company.co.kr</span>
+                <span>email : kds3744@naver.com</span>
               </div>
             </div>
           </div>
@@ -57,26 +65,6 @@ export default function Footer() {
               </div>
             );
           })}
-        </div>
-
-        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Company. All rights reserved.
-          </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link
-              href="/privacy"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              개인정보처리방침
-            </Link>
-            <Link
-              href="/terms"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              이용약관
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
