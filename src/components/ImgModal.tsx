@@ -95,7 +95,7 @@ export default function ImgModal({
                     }`}
               >
                 <Image
-                  src={"/자동커팅기.webp"}
+                  src={thumb}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
                   width={144}
                   height={144}
