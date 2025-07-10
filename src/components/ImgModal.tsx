@@ -76,6 +76,7 @@ export default function ImgModal({
             <Image
               src={imgSource.imageList[idx] || "/placeholder.svg"}
               alt={imgSource.title}
+              placeholder="blur"
               className="w-full h-auto object-contain rounded-lg "
               fill
             />
@@ -94,7 +95,7 @@ export default function ImgModal({
                     }`}
               >
                 <Image
-                  src={thumb}
+                  src={"/자동커팅기.webp"}
                   alt={`subImg-${thumb}-${tIdx + 1}`}
                   width={144}
                   height={144}

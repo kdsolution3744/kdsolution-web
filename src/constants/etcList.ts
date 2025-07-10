@@ -1,7 +1,7 @@
-import sensor1 from "@/assets/기타설비/센서 커팅기1.webp";
-import sensor2 from "@/assets/기타설비/센서 커팅기2.webp";
-import manual from "@/assets/기타설비/수동 커팅기.webp";
-import auto from "@/assets/기타설비/자동 커팅기.webp";
+import sensor1 from "@/assets/기타설비/센서커팅기1.webp";
+import sensor2 from "@/assets/기타설비/센서커팅기2.webp";
+import manual from "@/assets/기타설비/수동커팅기.webp";
+import auto from "@/assets/기타설비/자동커팅기.webp";
 import dust1 from "@/assets/기타설비/집진기1.webp";
 import dust2 from "@/assets/기타설비/집진기2.webp";
 import dust3 from "@/assets/기타설비/집진기3.webp";
