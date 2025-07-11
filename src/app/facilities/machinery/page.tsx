@@ -3,12 +3,10 @@ import { MACHINERY_LIST } from "@/constants/machineryList";
 
 export default function MachineryPage() {
   return (
-    <div>
-      <ImgCompLayout
-        title="공정 설비"
-        imgSourceList={MACHINERY_LIST}
-        subTitle=""
-      />
-    </div>
+    <ImgCompLayout
+      title="공정 설비"
+      imgSourceList={MACHINERY_LIST}
+      subTitle=""
+    />
   );
 }
