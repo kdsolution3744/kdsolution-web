@@ -1,30 +1,17 @@
+import { MENU_ITEM } from "@/constants/menu";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
   async redirects() {
-    return [
-      {
-        source: "/about",
-        destination: "/about/introduction",
+    const redirects = MENU_ITEM.map((v) => {
+      return {
+        source: v.href,
+        destination: v.subItems[0].href,
         permanent: true,
-      },
-      {
-        source: "/products",
-        destination: "/products/material",
-        permanent: true,
-      },
-      {
-        source: "/facilities",
-        destination: "/facilities/machinery",
-        permanent: true,
-      },
-      {
-        source: "/contact",
-        destination: "/contact/location",
-        permanent: true,
-      },
-    ];
+      };
+    });
+    return redirects;
   },
 };
 
