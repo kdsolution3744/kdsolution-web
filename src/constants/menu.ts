@@ -14,6 +14,7 @@ export const MENU_ITEM: IMenuList[] = [
     subItems: [
       { title: "회사소개", href: "/about/introduction" },
       { title: "연혁", href: "/about/history" },
+      { title: "인증서", href: "/about/certificate" },
     ],
   },
   {
