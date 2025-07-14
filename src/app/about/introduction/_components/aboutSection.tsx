@@ -1,5 +1,6 @@
 import aboutImage from "@/assets/about.jpg";
 import AnimatedSection from "@/components/animatedSection";
+import CommonHeader from "@/components/commonHeader";
 import Image from "next/image";
 
 export default function AboutSection() {
@@ -22,9 +23,7 @@ export default function AboutSection() {
           </AnimatedSection>
           <AnimatedSection>
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                회사 소개
-              </h2>
+              <CommonHeader title="회사" titleBold="소개" />
               <div className="w-16 h-0.5 bg-gray-900 mb-8"></div>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>

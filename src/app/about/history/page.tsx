@@ -1,3 +1,4 @@
+import CommonHeader from "@/components/commonHeader";
 import { HISTORY_LIST } from "@/constants/history";
 import HistoryItem from "./_components/historyItem";
 
@@ -6,16 +7,11 @@ export default function HistoryPage() {
     <div className=" py-16 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-            회사 연혁
-          </h1>
-          <div className="w-24 h-0.5 bg-gray-900 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            2011년 설립 이후 지속적인 성장과 혁신을 통해 업계를 선도해온 우리의
-            발자취
-          </p>
-        </div>
+        <CommonHeader
+          title="회사"
+          titleBold="연혁"
+          subTitle="설립 이후 지속적인 성장과 혁신을 통해 업계를 선도해온 우리의 발자취"
+        />
 
         {/* Timeline */}
         <div className="relative">

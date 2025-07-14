@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/animatedSection";
+import CommonHeader from "@/components/commonHeader";
 import { VISION_LIST } from "@/constants/vision";
 
 export default function VisionSection() {
@@ -6,19 +7,11 @@ export default function VisionSection() {
     <section className=" bg-gradient-to-br from-gray-50 via-white to-gray-50 py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-tight">
-              Our{" "}
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Vision
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              지속가능한 성장을 위한 우리의 경영 철학과 목표
-            </p>
-          </div>
-        </AnimatedSection>
+        <CommonHeader
+          title="Our"
+          titleBold="Vision"
+          subTitle="지속가능한 성장을 위한 우리의 경영 철학과 목표"
+        />
 
         {/* Vision Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">

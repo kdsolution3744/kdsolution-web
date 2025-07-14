@@ -1,4 +1,5 @@
 "use client";
+import CommonHeader from "@/components/commonHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Clock, HardHat, MapPin, Phone } from "lucide-react";
@@ -51,10 +52,7 @@ export default function MapSection() {
   return (
     <div className="w-full max-w-6xl mx-auto p-12 space-y-6">
       {/* Header */}
-      <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">오시는 길</h1>
-      </div>
-
+      <CommonHeader title="오시는" titleBold="길" />
       {/* Tab Navigation */}
       <div className="flex justify-center">
         <div className="bg-gray-100 p-1 rounded-lg flex space-x-1">

@@ -1,4 +1,5 @@
 import AnimatedSection from "@/components/animatedSection";
+import CommonHeader from "@/components/commonHeader";
 import { CONTACT_INFO } from "@/constants/contactInfo";
 
 export default function InquiryPage() {
@@ -6,19 +7,11 @@ export default function InquiryPage() {
     <div className=" bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-tight">
-              Contact{" "}
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Us
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              궁금한 점이 있으시거나 협업을 원하신다면 언제든지 연락해주세요
-            </p>
-          </div>
-        </AnimatedSection>
+        <CommonHeader
+          title="Contact"
+          titleBold="Us"
+          subTitle="궁금한 점이 있으시거나 협업을 원하신다면 언제든지 연락해주세요"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form. 실제 이메일 전송기능이 미정이라 우선 주석처리 */}
