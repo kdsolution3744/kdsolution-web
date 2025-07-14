@@ -4,6 +4,7 @@ import iso14001_2 from "@/assets/인증서/ISO 14001 2015-2.webp";
 import iso9001_1 from "@/assets/인증서/ISO9001 2015-1.webp";
 import iso9001_2 from "@/assets/인증서/ISO9001 2015-2.webp";
 import AnimatedSection from "@/components/animatedSection";
+import CommonHeader from "@/components/commonHeader";
 import ImgModal from "@/components/ImgModal";
 import type { ImgSource } from "@/constants/imgSource";
 import Image from "next/image";
@@ -32,27 +33,25 @@ export default function CertificatePage() {
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-tight">
-            인증서
-          </h1>
-          <div className="w-24 h-0.5 bg-gray-900 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            KD Solution의 품질 및 환경 인증서 현황입니다.
-          </p>
-        </div>
+        <CommonHeader
+          title="산업"
+          titleBold="인증서"
+          subTitle="KD Solution의 품질 및 환경 인증서입니다."
+        />
         <div className="space-y-12">
           {certificateList.map((cert) => (
             <AnimatedSection key={cert.title}>
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col md:flex-row items-center gap-4">
-                <h2 className="text-xl font-bold text-gray-900 text-center mb-4 md:mb-0 shrink-0">
-                  {cert.title}
-                </h2>
-                <div className="flex flex-row gap-8 w-full justify-center">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col items-center gap-4">
+                <div>
+                  <h2 className="text-xl text-center shrink-0 font-bold mb-4">
+                    {cert.title}
+                  </h2>
+                </div>
+                <div className="flex md:flex-row flex-col gap-8 w-full justify-center">
                   {cert.imageList.map((img, i) => (
                     <button
                       key={i}
-                      className="relative w-48 h-64 focus:outline-none"
+                      className="relative w-full min-h-64 md:w-90 md:h-124 focus:outline-none"
                       onClick={() => handleImageClick(cert)}
                       type="button"
                     >
@@ -61,8 +60,7 @@ export default function CertificatePage() {
                         alt={cert.title + " 이미지 " + (i + 1)}
                         fill
                         placeholder="blur"
-                        className="object-contain rounded-lg shadow hover:scale-105 transition-transform duration-200"
-                        sizes="192px"
+                        className="object-contain hover:scale-105 transition-transform duration-200"
                       />
                     </button>
                   ))}
