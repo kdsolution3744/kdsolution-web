@@ -45,7 +45,13 @@ export default function ImgModal({
       />
 
       {/* Modal Content */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl min-w-[320px] min-h-[420px] max-h-[90vh] flex flex-col overflow-hidden">
+      <div
+        className="relative bg-gray-200/20 bg-clip-padding backdrop-filter 
+                  backdrop-blur-sm border border-gray-100/30 
+                  rounded-2xl shadow-2xl w-full max-w-2xl 
+                  min-w-[320px] min-h-[420px] max-h-[90vh] 
+                  flex flex-col overflow-hidden"
+      >
         {/* Title */}
         <div className="w-full px-8 pt-6 pb-2 text-xl font-bold text-center border-b border-gray-200 bg-white z-10">
           {imgSource.title}
@@ -53,7 +59,7 @@ export default function ImgModal({
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-20 w-10 h-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 "
+          className="absolute top-4 right-4 z-20 w-10 h-10 bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 "
         >
           <svg
             className="w-6 h-6 text-gray-600"
@@ -71,13 +77,13 @@ export default function ImgModal({
         </button>
 
         {/* Image Section */}
-        <div className="flex-1 bg-gray-100 flex flex-col items-center justify-center p-8 space-y-4 min-h-[320px]">
-          <div className="relative min-w-[400px] w-full min-h-[400px] h-auto">
+        <div className="flex flex-col items-center justify-center p-8 space-y-4 ">
+          <div className="relative flex-1 flex w-full min-w-[300px] min-h-[400px] ">
             <Image
               src={imgSource.imageList[idx] || "/placeholder.svg"}
               alt={imgSource.title}
               placeholder="blur"
-              className="w-full h-auto object-contain rounded-lg "
+              className="object-contain rounded-lg "
               fill
             />
           </div>
