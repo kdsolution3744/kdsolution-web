@@ -18,7 +18,7 @@ export const CONTACT_INFO: IContactInfo[] = [
   {
     title: "FAX",
     content: "031-493-3745",
-    desc: "평일 09:00 - 18:00",
+    desc: "24시간 접수 가능",
     icon: <Printer />,
   },
   {
