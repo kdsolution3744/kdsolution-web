@@ -39,7 +39,7 @@ export default function MapSection() {
         </div>
       ),
       phone: "031-493-3744",
-      hours: "평일 07:00 - 17:00",
+      hours: "평일 09:00 - 18:00",
       icon: HardHat,
       color: "bg-orange-500",
     },
