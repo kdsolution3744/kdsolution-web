@@ -16,11 +16,11 @@ export const MEASURE_LIST: ImgSource[] = [
     imageList: [CCD],
   },
   {
-    title: "롤검사기(틸틸형)",
+    title: "롤검사기",
     imageList: [roll],
   },
   {
-    title: "현미경 2대",
+    title: "현미경 3대",
     imageList: [scope],
   },
   {
