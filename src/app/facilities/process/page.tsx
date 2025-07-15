@@ -186,7 +186,7 @@ export default function ProcessPage() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            제조 프로세스 플로우
+            제조 프로세스
           </h1>
           <p className="text-gray-600">
             각 단계를 클릭하여 프로세스 흐름을 확인하세요
