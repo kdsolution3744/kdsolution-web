@@ -1,5 +1,5 @@
 import { MENU_ITEM } from "@/constants/menu";
-import { Hash, Mail, MapPin, Phone, UserRound } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -22,16 +22,18 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <UserRound className="h-4 w-4" />
                 <span>대표 : 이기복</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Hash className="h-4 w-4" />
                 <span>사업자 등록 번호 : 134-86-83481</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4" />
-                <span>주소 : 경기도 안산시 단원구 성곡로 176, 621호</span>
+                <span>사무실 : 경기도 안산시 단원구 성곡로 176, 621호</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                <span>
+                  현장 : {"경기도 시흥시 희망공원로 68 (정왕동2094-14)"}
+                </span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
