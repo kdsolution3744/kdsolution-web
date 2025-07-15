@@ -1,6 +1,7 @@
 "use client";
 
 import flow from "@/assets/flow.jpg";
+import CommonHeader from "@/components/commonHeader";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -184,14 +185,11 @@ export default function ProcessPage() {
   return (
     <div className=" bg-gray-50 p-6 ">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            제조 프로세스
-          </h1>
-          <p className="text-gray-600">
-            각 단계를 클릭하여 프로세스 흐름을 확인하세요
-          </p>
-        </div>
+        <CommonHeader
+          title="제조"
+          titleBold="프로세스"
+          subTitle="제조 프로세스 흐름을 확인하세요"
+        />
         <div className="flex flex-row gap-4 justify-center my-4">
           <Button onClick={() => setMode("이미지")}>이미지</Button>
           <Button onClick={() => setMode("컴포넌트")}>컴포넌트</Button>
