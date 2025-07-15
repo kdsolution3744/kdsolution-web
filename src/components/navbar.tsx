@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 h-16 z-50  w-full text-black bg-white`}>
-      <div className="w-full flex h-16 items-center justify-between md:justify-around px-4 md:px-16">
+      <div className="w-full flex h-16 items-center justify-between lg:justify-around px-4 lg:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
           <Image src={"/logo.jpg"} width={40} height={0} alt="logo" />
@@ -35,7 +35,7 @@ export default function Navbar() {
         <ul
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
-          className="hidden flex-1 max-w-3/5 justify-around h-full md:flex items-center group z-50"
+          className="hidden flex-1 max-w-3/5 justify-around h-full lg:flex items-center group z-50"
         >
           <div
             className={`w-full absolute border-t h-80 top-[64px] left-0
@@ -83,12 +83,12 @@ export default function Navbar() {
         {/* 모바일 메뉴 */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-5 w-5" />
               <span className="sr-only">메뉴 열기</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] p-8 md:w-[400px]">
+          <SheetContent side="right" className="w-[300px] p-8 lg:w-[400px]">
             <div className="flex flex-col h-full justify-between space-y-4 mt-4">
               <nav className="flex flex-col space-y-2">
                 {MENU_ITEM.map((item) => (
