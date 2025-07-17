@@ -1,12 +1,22 @@
 "use client";
 
 import { sendEmail } from "@/lib/mailAction";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { useFormStatus } from "react-dom";
+
+function formatPhoneNumber(value: string) {
+  // 숫자만 남기기
+  const numbersOnly = value.replace(/[^0-9]/g, "");
+  if (numbersOnly.length <= 3) return numbersOnly;
+  if (numbersOnly.length <= 7)
+    return numbersOnly.replace(/(\d{3})(\d{1,4})/, "$1-$2");
+  return numbersOnly.replace(/(\d{3})(\d{4})(\d{1,4})/, "$1-$2-$3");
+}
 
 export default function EmailForm() {
   const [state, formAction] = useActionState(sendEmail, null);
   const { pending } = useFormStatus();
+  const [phone, setPhone] = useState("");
   // const [isPending, setIsPending] = useState(false);
   return (
     <>
@@ -76,8 +86,13 @@ export default function EmailForm() {
                 type="tel"
                 id="phone"
                 name="phone"
+                required={false}
+                inputMode="numeric"
+                value={phone}
+                onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 placeholder="010-1234-5678"
+                maxLength={13}
               />
             </div>
           </div>
