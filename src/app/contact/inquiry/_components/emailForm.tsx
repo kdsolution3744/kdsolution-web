@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
 export default function EmailForm() {
-  const [isPending, setIsPending] = useState(false);
+  // const [isPending, setIsPending] = useState(false);
   return (
     <>
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
