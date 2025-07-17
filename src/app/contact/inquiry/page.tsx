@@ -1,6 +1,7 @@
 import AnimatedSection from "@/components/animatedSection";
 import CommonHeader from "@/components/commonHeader";
 import { CONTACT_INFO } from "@/constants/contactInfo";
+import EmailForm from "./_components/emailForm";
 
 export default function InquiryPage() {
   return (
@@ -15,9 +16,9 @@ export default function InquiryPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form. 실제 이메일 전송기능이 미정이라 우선 주석처리 */}
-          {/* <AnimatedSection delay={200}>
-              
-            </AnimatedSection> */}
+          <AnimatedSection delay={200}>
+            <EmailForm />
+          </AnimatedSection>
 
           {/* Contact Information */}
           <AnimatedSection delay={400}>
