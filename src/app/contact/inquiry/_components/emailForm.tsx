@@ -2,9 +2,11 @@
 
 import { sendEmail } from "@/lib/mailAction";
 import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 
 export default function EmailForm() {
   const [state, formAction] = useActionState(sendEmail, null);
+  const { pending } = useFormStatus();
   // const [isPending, setIsPending] = useState(false);
   return (
     <>
@@ -98,10 +100,18 @@ export default function EmailForm() {
 
           <button
             type="submit"
+            disabled={pending}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {"문의 보내기"}
+            {pending ? "전송 중..." : "문의 보내기"}
           </button>
+          {state?.success ? (
+            <div className="text-green-500 mt-4">
+              메일이 성공적으로 전송되었습니다.
+            </div>
+          ) : (
+            <div className="text-red-500 mt-4">{state?.message}</div>
+          )}
         </form>
       </div>
     </>
