@@ -103,12 +103,7 @@ export const getEmailHtml = (
           <!-- 푸터 -->
           <tr>
             <td bgcolor="#f0f4ff" style="text-align:center; padding:25px 40px; color:#718096; font-size:14px;">
-              <div>© ${new Date().getFullYear()} COMPANY. All Rights Reserved.</div>
-              <div style="margin-top:10px;">
-                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">홈페이지</a>
-                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">개인정보처리방침</a>
-                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">고객센터</a>
-              </div>
+              <div>© ${new Date().getFullYear()} KD Solution. All Rights Reserved.</div>
             </td>
           </tr>
         </table>
