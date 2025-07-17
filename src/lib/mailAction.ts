@@ -69,14 +69,13 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
       to: process.env.NEXT_PUBLIC_EMAIL,
       replyTo: email as string,
       subject: `[문의] ${company} : ${name}`,
-      html: `
-        <p>보낸 이 : ${name}</p>
-        <p>이메일 : ${email}</p>
-        <p>회사 : ${company}</p>
-        <p>번호 : ${phone}</p>
-        <p>----------------------------------------------</p>
-        <div>${(message as string).replace(/(<([^>]+)>)/gi, "")}</div>
-      `,
+      html: getEmailHtml(
+        name as string,
+        email as string,
+        company as string,
+        phone as string,
+        message as string
+      ),
     });
 
     return { success: true, message: "메일 전송 성공" };
