@@ -1,223 +1,120 @@
-const getEmailHtml = (
+export const getEmailHtml = (
   name: string,
   email: string,
   company: string,
   phone: string,
   message: string
 ) => `
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>새로운 문의 알림</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-    }
-    
-    body {
-      background-color: #f7f9fc;
-      padding: 20px;
-    }
-    
-    .email-container {
-      max-width: 650px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    }
-    
-    .email-header {
-      background: linear-gradient(135deg, #4361ee, #3a0ca3);
-      color: white;
-      padding: 30px 40px;
-      text-align: center;
-    }
-    
-    .email-logo {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-    
-    .email-title {
-      font-size: 24px;
-      font-weight: 600;
-      margin: 20px 0 10px;
-    }
-    
-    .email-subtitle {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-top: 8px;
-    }
-    
-    .email-body {
-      padding: 40px;
-    }
-    
-    .info-card {
-      background: #f8f9ff;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 30px;
-    }
-    
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 15px;
-    }
-    
-    .info-item {
-      margin-bottom: 15px;
-    }
-    
-    .info-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: #5a67d8;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .info-label i {
-      margin-right: 8px;
-      font-size: 16px;
-    }
-    
-    .info-value {
-      font-size: 16px;
-      color: #2d3748;
-      font-weight: 500;
-      padding-left: 24px;
-    }
-    
-    .message-container {
-      background: #f8f9ff;
-      border-radius: 10px;
-      padding: 25px;
-    }
-    
-    .message-label {
-      font-size: 16px;
-      font-weight: 600;
-      color: #5a67d8;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .message-content {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      line-height: 1.7;
-      color: #4a5568;
-      font-size: 15px;
-      white-space: pre-line;
-    }
-    
-    .email-footer {
-      text-align: center;
-      padding: 25px 40px;
-      background: #f0f4ff;
-      color: #718096;
-      font-size: 14px;
-    }
-    
-    .footer-links {
-      margin-top: 10px;
-    }
-    
-    .footer-links a {
-      color: #5a67d8;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    
-    @media (max-width: 600px) {
-      .email-header, .email-body, .email-footer {
-        padding: 25px;
-      }
-      
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
-<body>
-  <div class="email-container">
-    <div class="email-header">
-      <div class="email-logo">COMPANY</div>
-      <h1 class="email-title">새로운 문의가 도착했습니다</h1>
-    </div>
-    
-    <div class="email-body">
-      <div class="info-card">
-        <div class="info-grid">
-          <div class="info-item">
-            <div class="info-label">
-              <i>👤</i> 이름
-            </div>
-            <div class="info-value">${name}</div>
-          </div>
+<body style="margin:0; padding:0; background-color:#f7f9fc; font-family: Arial, sans-serif;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f7f9fc">
+    <tr>
+      <td align="center" style="padding:40px 20px;">
+        <!-- 컨테이너 -->
+        <table width="100%" max-width="650" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border-radius:12px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
+          <!-- 헤더 -->
+          <tr>
+            <td bgcolor="#4361ee" style="padding:30px 40px; text-align:center; background: linear-gradient(135deg, #4361ee, #3a0ca3);">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td style="color:#ffffff; font-size:28px; font-weight:700; letter-spacing:1px; padding-bottom:10px;">
+                    KD Solution
+                  </td>
+                </tr>
+                <tr>
+                  <td style="color:#ffffff; font-size:24px; font-weight:600; padding:20px 0 10px;">
+                    새로운 문의가 도착했습니다
+                  </td>
+                </tr>
+                
+              </table>
+            </td>
+          </tr>
           
-          <div class="info-item">
-            <div class="info-label">
-              <i>✉️</i> 이메일
-            </div>
-            <div class="info-value">
-              <a href="mailto:${email}" style="color: #4361ee; text-decoration: none;">${email}</a>
-            </div>
-          </div>
+          <!-- 본문 -->
+          <tr>
+            <td style="padding:40px;">
+              <!-- 정보 카드 -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f8f9ff" style="border-radius:10px; margin-bottom:30px;">
+                <tr>
+                  <td style="padding:25px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <!-- 이름 -->
+                            <tr>
+                              <td width="50%" style="padding-bottom:15px;">
+                                <div style="font-size:14px; font-weight:600; color:#5a67d8; margin-bottom:6px;">👤 이름</div>
+                                <div style="font-size:16px; color:#2d3748; font-weight:500; padding-left:24px;">${name}</div>
+                              </td>
+                              <!-- 이메일 -->
+                              <td width="50%" style="padding-bottom:15px;">
+                                <div style="font-size:14px; font-weight:600; color:#5a67d8; margin-bottom:6px;">✉️ 이메일</div>
+                                <div style="font-size:16px; color:#2d3748; font-weight:500; padding-left:24px;">
+                                  <a href="mailto:${email}" style="color:#4361ee; text-decoration:none;">${email}</a>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- 회사명 -->
+                            <tr>
+                              <td width="50%" style="padding-bottom:15px;">
+                                <div style="font-size:14px; font-weight:600; color:#5a67d8; margin-bottom:6px;">🏢 회사명</div>
+                                <div style="font-size:16px; color:#2d3748; font-weight:500; padding-left:24px;">${
+                                  company || "없음"
+                                }</div>
+                              </td>
+                              <!-- 전화번호 -->
+                              <td width="50%" style="padding-bottom:15px;">
+                                <div style="font-size:14px; font-weight:600; color:#5a67d8; margin-bottom:6px;">📞 전화번호</div>
+                                <div style="font-size:16px; color:#2d3748; font-weight:500; padding-left:24px;">${
+                                  phone || "없음"
+                                }</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- 문의 내용 -->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f8f9ff" style="border-radius:10px;">
+                <tr>
+                  <td style="padding:25px;">
+                    <div style="font-size:16px; font-weight:600; color:#5a67d8; margin-bottom:15px;">💬 문의 내용</div>
+                    <div style="background:white; border-radius:8px; padding:20px; line-height:1.7; color:#4a5568; font-size:15px; white-space:pre-line;">
+                      ${(message as string).replace(/(<([^>]+)>)/gi, "")}
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
           
-          <div class="info-item">
-            <div class="info-label">
-              <i>🏢</i> 회사명
-            </div>
-            <div class="info-value">${company || "없음"}</div>
-          </div>
-          
-          <div class="info-item">
-            <div class="info-label">
-              <i>📞</i> 전화번호
-            </div>
-            <div class="info-value">${phone || "없음"}</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="message-container">
-        <div class="message-label">
-          <i>💬</i> 문의 내용
-        </div>
-        <div class="message-content">${(message as string).replace(
-          /(<([^>]+)>)/gi,
-          ""
-        )}</div>
-      </div>
-    </div>
-    
-    <div class="email-footer">
-      <p>© ${new Date().getFullYear()} COMPANY. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">홈페이지</a>
-        <a href="#">개인정보처리방침</a>
-        <a href="#">고객센터</a>
-      </div>
-    </div>
-  </div>
+          <!-- 푸터 -->
+          <tr>
+            <td bgcolor="#f0f4ff" style="text-align:center; padding:25px 40px; color:#718096; font-size:14px;">
+              <div>© ${new Date().getFullYear()} COMPANY. All Rights Reserved.</div>
+              <div style="margin-top:10px;">
+                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">홈페이지</a>
+                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">개인정보처리방침</a>
+                <a href="#" style="color:#5a67d8; text-decoration:none; margin:0 10px;">고객센터</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
 `;

@@ -4,6 +4,7 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { headers } from "next/headers";
 import { createTransport } from "nodemailer";
+import { getEmailHtml } from "./emailHtml";
 
 // Upstash Redis 클라이언트 초기화
 const redis = new Redis({
