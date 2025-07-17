@@ -92,7 +92,7 @@ export default function EmailForm() {
             />
           </div>
 
-          <button
+          {/* <button
             type="submit"
             disabled={isPending}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -110,7 +110,7 @@ export default function EmailForm() {
             >
               {state.message}
             </div>
-          )}
+          )} */}
         </form>
       </div>
     </>
