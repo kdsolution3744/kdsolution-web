@@ -71,6 +71,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="a086dd8f8451fb6ab393f1b815526e64a7c2c9c2"
+        />
+      </head>
       <body className={`${pretendard.className} antialiased`}>
         <Navbar />
 
