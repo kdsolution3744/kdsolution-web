@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="w-full flex h-16 items-center justify-between lg:justify-around px-4 lg:px-16">
         {/* 로고 */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={"/logo.jpg"} width={40} height={0} alt="logo" />
+          <Image src={"/logo.png"} width={40} height={0} alt="logo" />
           <span className="font-bold text-xl">KD Solution</span>
         </Link>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
                   className="flex items-center space-x-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  <img src={"/logo.jpg"} width={32} />
+                  <img src={"/logo.png"} width={32} />
                   {/* <span className="font-bold text-lg">KD Solution</span> */}
                 </Link>
               </div>
