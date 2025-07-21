@@ -33,7 +33,7 @@ const transporter = createTransport({
   },
 });
 
-export const sendEmail = async (prevState: any, formData: FormData) => {
+export const sendEmail = async (prevState: unknown, formData: FormData) => {
   try {
     // 1. 클라이언트 IP 추출
     const headersList = headers();
@@ -65,7 +65,7 @@ export const sendEmail = async (prevState: any, formData: FormData) => {
     const { name, email, company, phone, message } =
       Object.fromEntries(formData);
 
-    const resp = await transporter.sendMail({
+    await transporter.sendMail({
       from: process.env.NEXT_PUBLIC_EMAIL,
       to: process.env.NEXT_PUBLIC_EMAIL,
       replyTo: email as string,
