@@ -75,19 +75,6 @@ npm run dev
 
 - 실행 후, 웹브라우저에서 [http://localhost:3000](http://localhost:3000) 주소로 접속하면 사이트를 볼 수 있습니다.
 
-### 5. (선택) 실제 서비스용 빌드
-
-```
-npm run build
-npm start
-```
-
-### 6. (선택) 코드 검사(린트)
-
-```
-npm run lint
-```
-
 ---
 
 ## 📝 주요 기능 및 특징
