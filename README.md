@@ -108,3 +108,4 @@ npm run lint
 
 - 메일 전송 기능의 목업 파일이 `src/lib/mailAction.ts` 에 있습니다. 또한 해당 함수를 이용한 이메일 전송 html은 `src/lib/emailHtml.ts` 입니다. 마지막으로 위 기능들을 사용한 이메일 전송 폼은 `src/app/contact/inquiry/_components/emailForm.tsx` 에 작성되어 있습니다. upstash 계정과 연동하여 `.env`파일에 api key, redis token, 그리고 메일 계정 정보를 작성해주시면 되겠습니다.
 - 이미지/정적 파일은 `src/assets/` 폴더와 `public`에 있습니다.
+- 실제 배포는 https://www.kdsolution.net/ 에 되어 있습니다.
