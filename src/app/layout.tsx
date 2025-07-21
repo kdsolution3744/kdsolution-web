@@ -11,8 +11,57 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "KD Solution",
-  description: "신뢰를 넘어, 미래로 KD Solution",
+  title: "KD Solution | 케이디솔루션 - 공식 웹사이트",
+  description:
+    "KD Solution(케이디솔루션) 공식 홈페이지. 품질경영, 환경경영, 첨단 소재·가공품·설비·공정·회사소개·연혁·인증서·문의 등 다양한 정보를 제공합니다.",
+  keywords: [
+    "KD Solution",
+    "케이디솔루션",
+    "품질경영",
+    "환경경영",
+    "소재",
+    "가공품",
+    "설비",
+    "공정",
+    "회사소개",
+    "연혁",
+    "인증서",
+    "문의",
+    "제조업",
+    "산업",
+    "공식 홈페이지",
+    "KD Solution official website",
+    "KDSolution",
+    "Korea manufacturing",
+    "ISO 9001",
+    "ISO 14001",
+  ],
+  openGraph: {
+    title: "KD Solution | 케이디솔루션 - 공식 웹사이트",
+    description:
+      "KD Solution(케이디솔루션) 공식 홈페이지. 품질경영, 환경경영, 첨단 소재·가공품·설비·공정·회사소개·연혁·인증서·문의 등 다양한 정보를 제공합니다.",
+    url: "https://www.kdsolution.net/",
+    siteName: "KD Solution",
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 256,
+        height: 256,
+        alt: "KD Solution Logo",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KD Solution | 케이디솔루션 - 공식 웹사이트",
+    description:
+      "KD Solution(케이디솔루션) 공식 홈페이지. 품질경영, 환경경영, 첨단 소재·가공품·설비·공정·회사소개·연혁·인증서·문의 등 다양한 정보를 제공합니다.",
+    images: ["/favicon.ico"],
+    site: "@kdsolution",
+  },
+  metadataBase: new URL("https://www.kdsolution.net/"),
 };
 
 export default function RootLayout({
@@ -21,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body className={`${pretendard.className} antialiased`}>
         <Navbar />
 
