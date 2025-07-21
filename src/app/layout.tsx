@@ -76,6 +76,10 @@ export default function RootLayout({
           name="naver-site-verification"
           content="a086dd8f8451fb6ab393f1b815526e64a7c2c9c2"
         />
+        <meta
+          name="google-site-verification"
+          content="LM1PYhaxzeGyWTunAjjwO4dBsbOPgPgnSawZ4yySdZw"
+        />
       </head>
       <body className={`${pretendard.className} antialiased`}>
         <Navbar />
