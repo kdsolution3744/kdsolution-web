@@ -1,4 +1,4 @@
-import facilHead from "@/assets/기계설비/고속 프레스 전경.png";
+import facilHead from "@/assets/헤더/설비및공정.webp";
 import SidebarLayout from "@/components/sidebarLayout";
 import { MENU_ITEM } from "@/constants/menu";
 export default function Layout({

@@ -1,4 +1,4 @@
-import facilHead from "@/assets/about.jpg";
+import facilHead from "@/assets/헤더/소재.webp";
 import SidebarLayout from "@/components/sidebarLayout";
 import { MENU_ITEM } from "@/constants/menu";
 export default function Layout({

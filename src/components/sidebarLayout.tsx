@@ -30,12 +30,12 @@ export default function SidebarLayout({
 
   return (
     <div className="w-full">
-      <div className="w-full h-120 md:80 relative">
+      <div className="w-full h-80 md:h-120 relative">
         <Image
           src={imgSrc}
           fill
           placeholder="blur"
-          className="object-cover -z-10 brightness-70"
+          className="-z-10 brightness-80"
           alt="layout-img"
         />
       </div>
