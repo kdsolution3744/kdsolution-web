@@ -1,5 +1,6 @@
 import CommonHeader from "@/components/commonHeader";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,15 +17,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { PETProductSpecList, removerSpecList } from "@/constants/productsSpec";
-import {
-  Cpu,
-  HardHat,
-  Layers,
-  Palette,
-  Scissors,
-  Shield,
-  Zap,
-} from "lucide-react";
+import { HardHat, Layers, Palette, Phone, Shield, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function MachineryPage() {
   return (
@@ -37,24 +31,12 @@ export default function MachineryPage() {
       {/* Remover Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-100">
-              <Scissors className="w-4 h-4 mr-2" />
-              리무버
-            </Badge>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              리무버 (Removable Tape)
-            </h3>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              PET에 실리콘, 아크릴 점착제를 도포한 제품으로 일반적인 테이프와
-              달리
-              <span className="font-semibold text-green-600">
-                {" "}
-                잔여물이 남지 않고, 표면 손상이 없이
-              </span>
-              떼어낼 수 있는 점이 특징입니다.
-            </p>
-          </div>
+          <CommonHeader
+            title="리무버"
+            titleBold="(Removable Tape)"
+            subTitle="PET에 실리콘, 아크릴 점착제를 도포한 제품으로 일반적인 테이프와
+              달리 잔여물이 남지 않고, 표면 손상이 없이 떼어낼 수 있는 점이 특징입니다."
+          />
 
           {/* Remover Types */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -185,19 +167,12 @@ export default function MachineryPage() {
       {/* Processing PET Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
-              <Cpu className="w-4 h-4 mr-2" />
-              가공용 PET
-            </Badge>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              가공용 PET
-            </h3>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
-              다양한 코팅 기술을 적용한 고기능성 PET 필름으로 각종 산업 분야의
-              특수 요구사항을 만족합니다.
-            </p>
-          </div>
+          <CommonHeader
+            title="가공용"
+            titleBold="PET"
+            subTitle="다양한 코팅 기술을 적용한 고기능성 PET 필름으로 각종 산업 분야의
+              특수 요구사항을 만족합니다."
+          />
 
           {/* Processing Types */}
           <div className="space-y-8 mb-12">
@@ -402,6 +377,24 @@ export default function MachineryPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-500 rounded-2xl">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl font-bold text-white mb-4">
+            제품에 대해 더 자세히 알아보세요
+          </h3>
+          <p className="text-xl text-blue-100 mb-8">
+            전문가와 상담하여 최적의 솔루션을 찾아보세요
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary">
+              <Phone />
+              <Link href={"/contact/inquiry"}>문의 하기</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
