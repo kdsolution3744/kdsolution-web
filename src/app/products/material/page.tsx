@@ -1,5 +1,4 @@
 import PET from "@/assets/pet.webp";
-import AnimatedSection from "@/components/animatedSection";
 import CommonHeader from "@/components/commonHeader";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,13 +23,13 @@ export default function MachineryPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <CommonHeader title="PET" titleBold="소재" />
-              <AnimatedSection>
-                <p className="text-xl text-gray-600 mb-8 max-w-3xl">
-                  내열성, 강도, 투명성, 화학적 안정성이 우수한 PET 소재로 다양한
-                  산업 분야에서 신뢰받는 솔루션을 제공합니다
-                </p>
-              </AnimatedSection>
+              <CommonHeader
+                title="PET"
+                titleBold="소재"
+                subTitle="내열성, 강도, 투명성, 화학적 안정성이 우수한 PET 소재로 다양한
+                  산업 분야에서 신뢰받는 솔루션을 제공합니다"
+              />
+
               <div className="flex gap-4 justify-center">
                 <Button size="lg" variant="default">
                   <Link href={"/contact/inquiry"}>문의 하기</Link>
