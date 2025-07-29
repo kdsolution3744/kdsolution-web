@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PETExampleList } from "@/constants/PETExample";
-import { Eye, Shield, Thermometer, Zap } from "lucide-react";
+import { Eye, Phone, Shield, Thermometer, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ExampleCard from "./_component/exampleCard";
@@ -157,6 +157,7 @@ export default function MachineryPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary">
+              <Phone />
               <Link href={"/contact/inquiry"}>문의 하기</Link>
             </Button>
           </div>
