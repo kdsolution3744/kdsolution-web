@@ -1,3 +1,4 @@
+import PET from "@/assets/pet.webp";
 import AnimatedSection from "@/components/animatedSection";
 import CommonHeader from "@/components/commonHeader";
 import { Button } from "@/components/ui/button";
@@ -10,22 +11,46 @@ import {
 } from "@/components/ui/card";
 import { PETExampleList } from "@/constants/PETExample";
 import { Eye, Shield, Thermometer, Zap } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import ExampleCard from "./_component/exampleCard";
 
 export default function MachineryPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br py-16 px-4">
       {/* Hero Section */}
+
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <CommonHeader title="PET" titleBold="소재" />
-          <AnimatedSection>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              내열성, 강도, 투명성, 화학적 안정성이 우수한 PET 소재로 다양한
-              산업 분야에서 신뢰받는 솔루션을 제공합니다
-            </p>
-          </AnimatedSection>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <CommonHeader title="PET" titleBold="소재" />
+              <AnimatedSection>
+                <p className="text-xl text-gray-600 mb-8 max-w-3xl">
+                  내열성, 강도, 투명성, 화학적 안정성이 우수한 PET 소재로 다양한
+                  산업 분야에서 신뢰받는 솔루션을 제공합니다
+                </p>
+              </AnimatedSection>
+              <div className="flex gap-4 justify-center">
+                <Button size="lg" variant="default">
+                  <Link href={"/contact/inquiry"}>문의 하기</Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-white rounded-2xl shadow-xl p-6">
+                <Image
+                  src={PET}
+                  alt="PET 소재 메인 이미지"
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+              {/* 장식적 요소 */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-20 -z-10"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-slate-100 rounded-full opacity-30 -z-10"></div>
+            </div>
+          </div>
         </div>
       </section>
 
