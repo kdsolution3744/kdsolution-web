@@ -23,6 +23,7 @@ export const MENU_ITEM: IMenuList[] = [
     subItems: [
       { title: "소재", href: "/products/material" },
       { title: "가공품", href: "/products/products" },
+      { title: "가공품B", href: "/products/productB" },
     ],
   },
   {
