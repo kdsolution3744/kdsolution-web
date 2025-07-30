@@ -35,7 +35,7 @@ export const CONTACT_INFO: IContactInfo[] = [
   },
   {
     title: "현장 주소",
-    content: "경기도 시흥시 희망공원로 68 (정왕동2094-14)",
+    content: "경기도 시흥시 희망공원로 68 (정왕동2091-14)",
     icon: <Factory />,
   },
 ];

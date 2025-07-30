@@ -17,7 +17,6 @@ export default function MapSection() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.7433696923367!2d126.75880207608637!3d37.324906172102224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b71c0bbd2ec47%3A0x6495dfacbed2271!2z6rK96riw64-EIOyViOyCsOyLnCDri6jsm5Dqtawg7ISx6rOh66GcIDE3NiA2MjHtmLg!5e0!3m2!1sko!2skr!4v1750932155461!5m2!1sko!2skr"
             className="w-full h-[500px]"
-            loading="lazy"
           />
         </div>
       ),
@@ -28,13 +27,12 @@ export default function MapSection() {
     },
     site: {
       title: "공장",
-      address: "경기도 시흥시 희망공원로 68 (정왕동2094-14)",
+      address: "경기도 시흥시 희망공원로 68 (정왕동2091-14)",
       iframe: () => (
         <div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6345.051494932304!2d126.70940285417474!3d37.33007558173697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7143506ab1f1%3A0x6310acdb2eeb149b!2z6rK96riw64-EIOyLnO2dpeyLnCDtnazrp53qs7Xsm5DroZwgNjggMTQ!5e0!3m2!1sko!2skr!4v1751280248778!5m2!1sko!2skr"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.5301712777423!2d126.7123444!3d37.32995530000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7143506ab1f1%3A0xb756af23277d66e9!2z6rK96riw64-EIOyLnO2dpeyLnCDtnazrp53qs7Xsm5DroZwgNjg!5e0!3m2!1sko!2skr!4v1753859556045!5m2!1sko!2skr"
             className="w-full h-[500px]"
-            loading="lazy"
           ></iframe>
         </div>
       ),

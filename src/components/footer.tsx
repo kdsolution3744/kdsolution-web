@@ -32,7 +32,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <span>
-                  현장 : {"경기도 시흥시 희망공원로 68 (정왕동2094-14)"}
+                  현장 : {"경기도 시흥시 희망공원로 68 (정왕동2091-14)"}
                 </span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
