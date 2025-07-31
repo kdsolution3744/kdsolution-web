@@ -53,7 +53,7 @@ const mainProcess: ProcessStep[] = [
   },
   {
     id: "10",
-    title: "제춤 생산",
+    title: "제품 생산",
     type: "normal",
   },
   {
