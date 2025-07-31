@@ -28,42 +28,41 @@ const mainProcess: ProcessStep[] = [
   },
   { id: "4", title: "소재 발주", type: "normal" },
   { id: "5", title: "금형 발주", type: "normal" },
-  { id: "6", title: "소재 입고", type: "normal" },
   {
-    id: "7",
-    title: "소재 수입 검사",
+    id: "6",
+    title: "소재 입고 및 수입 검사",
     type: "decision",
-    branches: { ng: "4", ok: "8" },
+    branches: { ng: "4", ok: "7" },
   },
   {
-    id: "8",
+    id: "7",
     title: "금형 입고 및 검수",
     type: "decision",
     branches: { ng: "5", ok: "9" },
   },
   {
-    id: "9",
+    id: "8",
     title: "모델 작업 셋팅",
     type: "normal",
   },
   {
-    id: "10",
+    id: "9",
     title: "공정 검사",
     type: "decision",
     branches: { ng: "9", ok: "11" },
   },
   {
-    id: "11",
+    id: "10",
     title: "제춤 생산",
     type: "normal",
   },
   {
-    id: "12",
+    id: "11",
     title: "출하 검사",
     type: "decision",
     branches: { ng: "검사", ok: "13" },
   },
-  { id: "13", title: "포장/출하", type: "normal" },
+  { id: "12", title: "포장/출하", type: "normal" },
 ];
 
 const inspectionProcess: ProcessStep[] = [
