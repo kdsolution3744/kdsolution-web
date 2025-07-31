@@ -35,7 +35,7 @@ export default function SidebarLayout({
           src={imgSrc}
           fill
           placeholder="blur"
-          className="-z-10 brightness-80"
+          className="-z-10"
           alt="layout-img"
         />
       </div>
