@@ -19,12 +19,13 @@ export const VISION_LIST: IVision[] = [
     borderColor: "border-blue-500",
     content: [
       {
-        title: "Small But Top",
-        desc: "작지만 최고의 기업이 되자",
+        title: "안전우선 안전경영",
       },
       {
-        title: "Slow and Steady",
-        desc: "한 걸음씩 꾸준히 정진하자",
+        title: "기업을 위한 현장소통과 기업 주도 성장 강화",
+      },
+      {
+        title: "한걸음씩 꾸준히 정진하자",
       },
     ],
   },
@@ -38,10 +39,10 @@ export const VISION_LIST: IVision[] = [
         title: "품질 제일주의",
       },
       {
-        title: "신제품 개발능력 향상",
+        title: "품질 경쟁력 확보",
       },
       {
-        title: "효율적인 개발시스템 구축",
+        title: "지속적 품질 개선 활동",
       },
     ],
   },
@@ -53,15 +54,14 @@ export const VISION_LIST: IVision[] = [
     content: [
       {
         title: "고객만족 실현",
-        desc: "고객불만 ZERO",
+        desc: "고객우선주의 생활화",
       },
       {
-        title: "최적의 작업환경 유지",
-        desc: "3정 5S 생활화",
+        title: "품질강화 실현",
       },
       {
-        title: "지속적인 개선활동 전개",
-        desc: "불량요인 사전제거",
+        title: "신제품 및 기술 개발능력 향상",
+        desc: "효율적인 개발시스템 구축",
       },
     ],
   },
