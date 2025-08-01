@@ -1,4 +1,4 @@
-import aboutHead from "@/assets/link-section-1.jpg";
+import aboutHead from "@/assets/헤더/회사소개3.webp";
 import SidebarLayout from "@/components/sidebarLayout";
 import { MENU_ITEM } from "@/constants/menu";
 export default function Layout({

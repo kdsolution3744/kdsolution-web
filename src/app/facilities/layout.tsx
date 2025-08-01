@@ -5,7 +5,7 @@ export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <SidebarLayout imgSrc={facilHead} targetItem={MENU_ITEM[2].subItems}>
+    <SidebarLayout cover imgSrc={facilHead} targetItem={MENU_ITEM[2].subItems}>
       {children}
     </SidebarLayout>
   );

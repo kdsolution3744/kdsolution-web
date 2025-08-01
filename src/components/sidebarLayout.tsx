@@ -10,10 +10,12 @@ export default function SidebarLayout({
   children,
   imgSrc,
   targetItem,
+  cover = false,
 }: Readonly<{
   children: React.ReactNode;
   imgSrc: StaticImageData;
   targetItem: IMenu[];
+  cover?: boolean;
 }>) {
   const pathname = usePathname();
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -35,7 +37,7 @@ export default function SidebarLayout({
           src={imgSrc}
           fill
           placeholder="blur"
-          className="-z-10"
+          className={`-z-10 ${cover ? "object-cover" : ""}`}
           alt="layout-img"
         />
       </div>
