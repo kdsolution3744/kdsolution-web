@@ -1,4 +1,4 @@
-import aboutImage from "@/assets/about.jpg";
+import aboutImage from "@/assets/about.webp";
 import AnimatedSection from "@/components/animatedSection";
 import CommonHeader from "@/components/commonHeader";
 import Image from "next/image";
