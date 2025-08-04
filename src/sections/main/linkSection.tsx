@@ -88,9 +88,6 @@ export default function LinkSection() {
               <h2 className="text-3xl md:text-4xl font-bold text-center">
                 소재
               </h2>
-              <p className="text-lg mt-2 text-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                소재 소개 문구
-              </p>
             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -113,9 +110,6 @@ export default function LinkSection() {
               <h2 className="text-3xl md:text-4xl font-bold text-center">
                 가공
               </h2>
-              <p className="text-lg mt-2 text-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                가공 소개 문구
-              </p>
             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
