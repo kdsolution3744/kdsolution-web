@@ -208,7 +208,7 @@ export default function ProcessPage() {
                 메인 프로세스
               </h2>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
                 {mainProcess.map((step) => (
                   <div key={step.id}>{renderProcessStep(step)}</div>
                 ))}
