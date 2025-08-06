@@ -180,6 +180,8 @@ npm run dev
 - 이미지/정적 파일은 `src/assets/` 폴더와 `public`에 있습니다.
 - 실제 배포는 https://www.kdsolution.net/ 에 되어 있습니다.
 
-```
 
-```
+## 폰트 라이센스
+폰트 라이센스 : https://github.com/orioncactus/pretendard/tree/main / https://noonnu.cc/font_page/694
+
+
