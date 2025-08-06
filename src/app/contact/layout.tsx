@@ -1,4 +1,4 @@
-import contactHead from "@/assets/헤더/문의2.webp";
+import contactHead from "@/assets/헤더/문의.webp";
 import SidebarLayout from "@/components/sidebarLayout";
 import { MENU_ITEM } from "@/constants/menu";
 
