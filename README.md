@@ -7,7 +7,7 @@
 
 ## ✏️ 연혁 내용 수정 방법
 
-1. 좌측 파일 목록에서 `src/constants/history.json` 파일을 클릭하세요.
+1. 좌측 파일 목록에서 [src/constants/history.json](src/constants/history.json) 파일을 클릭하세요.
 2. 우측 상단의 `연필(✏️ Edit)` 버튼을 클릭합니다.
 3. 연혁 항목을 아래 형식에 맞게 수정하거나 새로 추가합니다.
 
