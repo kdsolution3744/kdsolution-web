@@ -1,5 +1,6 @@
 import { MENU_ITEM } from "@/constants/menu";
 import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,12 +11,10 @@ export default function Footer() {
           {/* 회사 정보 */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">
-                  L
-                </span>
-              </div>
-              <span className="font-bold text-xl">Company</span>
+              <Link href="/" className="flex items-center space-x-2">
+                <Image src={"/logo.png"} width={40} height={0} alt="logo" />
+                <span className="font-bold text-xl">KD Solution</span>
+              </Link>
             </div>
             <p className="text-sm text-muted-foreground">
               혁신적인 기술과 품질로 고객의 성공을 함께하는 기업입니다.
